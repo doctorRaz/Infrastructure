@@ -95,7 +95,6 @@
     <Compile Include="..\src\Utilites\UtilitesString.cs">
       <Link>Utilites\UtilitesString.cs</Link>
     </Compile>
-    <Compile Include="CadCommand.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

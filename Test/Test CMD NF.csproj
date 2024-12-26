@@ -39,12 +39,19 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="hostdbmgd">
-      <HintPath>..\SDK\NC22\hostdbmgd.dll</HintPath>
+    <Reference Include="hostdbmgd, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\nanoCadCoreMC22.0.1.0.0\lib\net45\hostdbmgd.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
     </Reference>
-    <Reference Include="hostmgd">
-      <HintPath>..\SDK\NC22\hostmgd.dll</HintPath>
+    <Reference Include="hostmgd, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\nanoCadCoreMC22.0.1.0.0\lib\net45\hostmgd.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="imapimgd, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\nanoCadCoreMC22.0.1.0.0\lib\net45\imapimgd.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
     </Reference>
     <Reference Include="Infrastructure.NF, Version=0.0.9122.38084, Culture=neutral, processorArchitecture=MSIL">
@@ -52,8 +59,14 @@
       <HintPath>..\bin\Release\Infrastructure.NF.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="mapimgd">
-      <HintPath>..\SDK\NC22\mapimgd.dll</HintPath>
+    <Reference Include="mapibasetypes, Version=1.0.8031.27361, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\nanoCadCoreMC22.0.1.0.0\lib\net45\mapibasetypes.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="mapimgd, Version=1.0.8031.27444, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\nanoCadCoreMC22.0.1.0.0\lib\net45\mapimgd.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
@@ -70,7 +83,9 @@
     <Compile Include="CadCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>

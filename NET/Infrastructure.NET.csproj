@@ -58,20 +58,6 @@
     </Compile>
   </ItemGroup>
 <ItemGroup>
-  <Reference Include="hostdbmgd">
-    <HintPath>..\SDK\NC23.1\hostdbmgd.dll</HintPath>
-    <Private>False</Private>
-    <SpecificVersion>False</SpecificVersion>
-  </Reference>
-  <Reference Include="hostmgd">
-    <HintPath>..\SDK\NC23.1\hostmgd.dll</HintPath>
-    <Private>False</Private>
-    <SpecificVersion>False</SpecificVersion>
-  </Reference>
-  <Reference Include="mapimgd">
-    <HintPath>..\SDK\NC23.1\mapimgd.dll</HintPath>
-    <Private>False</Private>
-    <SpecificVersion>False</SpecificVersion>
-  </Reference>
+  <PackageReference Include="nanoCadCoreMC24.1.NET" Version="1.0.0" />
 </ItemGroup>
 </Project>

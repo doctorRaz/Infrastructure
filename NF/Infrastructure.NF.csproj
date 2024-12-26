@@ -40,16 +40,29 @@
     <DocumentationFile>..\bin\Release\Infrastructure.NF.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="hostdbmgd">
-      <HintPath>..\SDK\NC22\hostdbmgd.dll</HintPath>
+    <Reference Include="hostdbmgd, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\nanoCadCoreMC22.0.1.0.0\lib\net45\hostdbmgd.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
     </Reference>
-    <Reference Include="hostmgd">
-      <HintPath>..\SDK\NC22\hostmgd.dll</HintPath>
+    <Reference Include="hostmgd, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\nanoCadCoreMC22.0.1.0.0\lib\net45\hostmgd.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
     </Reference>
-    <Reference Include="mapimgd">
-      <HintPath>..\SDK\NC22\mapimgd.dll</HintPath>
+    <Reference Include="imapimgd, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\nanoCadCoreMC22.0.1.0.0\lib\net45\imapimgd.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="mapibasetypes, Version=1.0.8031.27361, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\nanoCadCoreMC22.0.1.0.0\lib\net45\mapibasetypes.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="mapimgd, Version=1.0.8031.27444, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\nanoCadCoreMC22.0.1.0.0\lib\net45\mapimgd.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
@@ -77,14 +90,16 @@
       <Link>Service\Msg.cs</Link>
     </Compile>
     <Compile Include="..\src\Utilites\Extensions.cs">
-      <Link>Service\Extensions.cs</Link>
+      <Link>Utilites\Extensions.cs</Link>
     </Compile>
     <Compile Include="..\src\Utilites\UtilitesString.cs">
       <Link>Utilites\UtilitesString.cs</Link>
     </Compile>
     <Compile Include="CadCommand.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>

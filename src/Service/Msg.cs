@@ -21,7 +21,7 @@ using Autodesk.AutoCAD.EditorInput;
 namespace drz.Infrastructure.Service
 {
     /// <summary>
-    /// сервис сообщений делается
+    /// сервис сообщений
     /// </summary>
     public class Msg
     {

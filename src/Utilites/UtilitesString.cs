@@ -8,7 +8,8 @@ using System.Xml.Linq;
 
 namespace drz.Infrastructure.Utility.String
 {
-    /// <summary>Утилиты и подпрограммы для работы со строками</summary>
+    /// <summary>Утилиты и подпрограммы для работы со строками
+    /// </summary>
     public class UtilString
     {
         /// <summary> Замена в строке запрещенных символов файловой системы Windows</summary>

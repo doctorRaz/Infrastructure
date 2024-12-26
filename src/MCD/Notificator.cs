@@ -72,7 +72,7 @@ namespace drz.Infrastructure.MCD
     }
 
     /// <summary>
-    /// вызов наносообщений
+    /// вызов наносообщений examples
     /// </summary>
     class notyCMD
     {

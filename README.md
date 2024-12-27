@@ -1,4 +1,4 @@
-# Сборник утилит
+# Сборник .NET утилит
 1. Читает из сборки имена и описания команд
 >Код к статье \
 https://autolisp.ru/2024/10/29/nanocad-vyvod-komand-s-ix-opisaniem-cherez-net/ \

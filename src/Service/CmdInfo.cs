@@ -4,6 +4,10 @@ using System.ComponentModel;
 using System.Reflection;
 using System;
 
+using drz.Infrastructure.CAD.MessageService;
+
+
+
 #if NC
 
 using Teigha.Runtime;
@@ -14,7 +18,7 @@ using Autodesk.AutoCAD.Runtime;
 #endif  
 
 
-namespace drz.Infrastructure.Service
+namespace drz.Infrastructure.CAD.Service
 {
     /// <summary>
     /// читает из сборки имена и описания команд
@@ -27,7 +31,6 @@ namespace drz.Infrastructure.Service
         /// <value>
         /// The method attribute.
         /// </value>
-        /*public*/
         CommandMethodAttribute MethodAttr { get; set; }
 
         /// <summary>
@@ -36,7 +39,6 @@ namespace drz.Infrastructure.Service
         /// <value>
         /// The Name attribute.
         /// </value>
-        /*public*/
         string NameAttr { get; set; }
 
         /// <summary>
@@ -98,13 +100,13 @@ namespace drz.Infrastructure.Service
                             //temp.descriptionAttr.Description ?? "");
                             smes = smes + temp.MethodAttr.GlobalName +
                                 smetod +
-                                "\t" + 
+                                "\t" +
                             temp.descriptionAttr.Description + "\n";
                         }
                         else
                         {
                             smes = smes + temp.MethodAttr.GlobalName +
-                                smetod+
+                                smetod +
                                 "\n";
                             //msgService.ConsoleMessage(temp.MethodAttr.GlobalName);
                         }
@@ -112,7 +114,7 @@ namespace drz.Infrastructure.Service
                 }
             }
             smes = smes + "___________________________";
-            msgService.ConsoleMessage(smes);
+            msgService.MsgConsole(smes);
 
         }
 

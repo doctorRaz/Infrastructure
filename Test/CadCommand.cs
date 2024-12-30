@@ -1,6 +1,10 @@
 //! Created by dRz on the WIN-CGR 21.12.2024 21:14:12
 using System.ComponentModel;
 using System.Reflection;
+using drz.Infrastructure.CAD.Service;
+using drz.Infrastructure.CAD.MessageService;
+
+
 #if NC
 using App = HostMgd.ApplicationServices;
 using Cad = HostMgd.ApplicationServices.Application;
@@ -8,7 +12,7 @@ using Db = Teigha.DatabaseServices;
 using Ed = HostMgd.EditorInput;
 using Rtm = Teigha.Runtime;
 using Gem = Teigha.Geometry;
-using drz.Infrastructure.Service;
+
 #elif AC
 using Autodesk.AutoCAD.Windows;
 using App = Autodesk.AutoCAD.ApplicationServices;
@@ -54,9 +58,26 @@ namespace drz.test
         public void Initialize()
         {
             //выводим список команд с описаниями
-            CmdInfo comInf = new CmdInfo();
-            comInf.Reflection(Assembly.GetExecutingAssembly()); //отдельной сборкой
-            //comInf.Reflection(); //модуль в этой сборке
+            FindCmdInfo fdc = new FindCmdInfo(Assembly.GetExecutingAssembly());
+
+
+            Msg msgService = new Msg();
+            if (!string.IsNullOrEmpty(fdc.sCmdInfo))
+            {
+            msgService.MsgConsole(fdc.sCmdInfo);
+            }
+            else
+            {
+            msgService.MsgConsole("Нет зарегистрированных команд");
+            }
+
+            if (!string.IsNullOrEmpty(fdc.sDuplInfo))
+            {
+                msgService.MsgConsole("_____________________");
+                msgService.MsgConsole(fdc.sDuplInfo);
+                msgService.MsgConsole("_____________________");
+
+            }
         }
 
         public void Terminate()
@@ -70,32 +91,75 @@ namespace drz.test
 
         Msg msgService = new Msg();
 
-        /// <summary>
-        /// переключалка нанобаз
-        /// </summary>
-        [Rtm.CommandMethod("drz_MyCommand", Rtm.CommandFlags.Session)]
-        [Description("Test 1 : Описание команды адын " /*+ nameof(test_cmd)*/)]
-        public void test_cmd()
-        {
-            msgService.ConsoleMessage("Test1 command");
-        }
+        ///// <summary>
+        ///// переключалка нанобаз
+        ///// </summary>
+        //[Rtm.CommandMethod("t1drz_MyCommand", Rtm.CommandFlags.Session)]
+        //[Description("Test 1 : Описание команды адын " /*+ nameof(test_cmd)*/)]
+        //public void test_cmd()
+        //{
+        //    FindCmdInfo fdc = new FindCmdInfo(Assembly.GetExecutingAssembly());
 
-        [Rtm.CommandMethod("drz_MyCommand2", Rtm.CommandFlags.Session)]
-        [Description("Test 2 : Описание команды два " /*+ nameof(test_cmd2)*/)]
-        public void test_cmd2()
-        {
-            msgService.ConsoleMessage("Test2 command");
-        }
+        //    Msg msgService = new Msg();
+        //    msgService.MsgConsole(fdc.sCmdInfo);
 
-        [Rtm.CommandMethod("drz_MyCommand3", Rtm.CommandFlags.Session)]
-        [Description("Test 3 : Run info assembly " /*+ nameof(test_cmd2)*/)]
-        public void test_cmd3()
-        {
-            //выводим список команд с описаниями
-            CmdInfo comInf = new CmdInfo();
-            comInf.Reflection(Assembly.GetExecutingAssembly()); //отдельной сборкой
-            //comInf.Reflection(); //модуль в этой сборке
-        }
+        //    if (!string.IsNullOrEmpty(fdc.sDuplInfo))
+        //    {
+        //        msgService.MsgConsole("_____________________");
+        //        msgService.MsgConsole(fdc.sDuplInfo);
+        //        msgService.MsgConsole("_____________________");
+
+        //    }
+        //}
+
+        //[Rtm.CommandMethod("t2_drz_MyCommand2", Rtm.CommandFlags.Session)]
+        //[Description("Test 2 : Описание команды два " /*+ nameof(test_cmd2)*/)]
+        //public void test_cmd2()
+        //{
+        //    msgService.MsgConsole("Test2 command");
+        //}
+
+        //[Rtm.CommandMethod("t26_drz_MyCommand2", Rtm.CommandFlags.Session)]
+        //[Description("Test 2 : Описание команды два косяк!!" /*+ nameof(test_cmd2)*/)]
+        //public void test_cmd21()
+        //{
+        //    msgService.MsgConsole("Test2 command");
+        //}
+
+        //[Rtm.CommandMethod("t256_drz_MyCommand2", Rtm.CommandFlags.Session)]
+        //public void test_cmd200()
+        //{
+        //    msgService.MsgConsole("Test2 command");
+        //}
+
+        //[Rtm.CommandMethod("t3656eee_drz_MyCommand2", Rtm.CommandFlags.Session)]
+        //[Description("Test 2 : Описание команды два " /*+ nameof(test_cmd2)*/)]
+        //public void test_cmd20()
+        //{
+        //    msgService.MsgConsole("Test2 command");
+        //}
+        //[Rtm.CommandMethod("t365650_drz_MyCommand2", Rtm.CommandFlags.Session)]
+        //[Description("Test 2 : Описание команды два " /*+ nameof(test_cmd2)*/)]
+        //public void test_cmd2000()
+        //{
+        //    msgService.MsgConsole("Test2 command");
+        //}
+        //[Rtm.CommandMethod("t3656eewq_drz_MyCommand2", Rtm.CommandFlags.Session)]
+        //[Description("Test 2 : Описание команды два " /*+ nameof(test_cmd2)*/)]
+        //public void test_cmd20k()
+        //{
+        //    msgService.MsgConsole("Test2 command");
+        //}
+
+        //[Rtm.CommandMethod("drz_MyCommand365464", Rtm.CommandFlags.Session)]
+        //[Description("Test 3 : Run info assembly " /*+ nameof(test_cmd2)*/)]
+        //public void test_cmd3()
+        //{
+        //    //выводим список команд с описаниями
+        //    CmdInfo comInf = new CmdInfo();
+        //    comInf.Reflection(Assembly.GetExecutingAssembly()); //отдельной сборкой
+        //    //comInf.Reflection(); //модуль в этой сборке
+        //}
         #endregion
     }
 }

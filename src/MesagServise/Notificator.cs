@@ -7,12 +7,12 @@ using System.Diagnostics;
 using System.Windows;
 
 
-namespace drz.Infrastructure.MCD
+namespace drz.Infrastructure.CAD.MessageService
 {
     /// <summary>
     /// нотифай мультикад
     /// </summary>
-   public class NotifaiMessag
+    public partial class NotifaiMessag
     {
         private string sURL { get; set; }
 
@@ -46,7 +46,7 @@ namespace drz.Infrastructure.MCD
                                         link);
 
         }
-        
+
         /// <summary> Открывает страницу по гиперссылке </summary>
         public void OnLink()
         {
@@ -74,7 +74,7 @@ namespace drz.Infrastructure.MCD
     /// <summary>
     /// вызов наносообщений examples
     /// </summary>
-   public class notyCMD
+    public class notyCMD
     {
         /// <summary>
         /// Пример вызова нотифай со ссылкой

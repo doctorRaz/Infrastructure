@@ -77,17 +77,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\src\MCD\Notificator.cs">
+    <Compile Include="..\src\MesagServise\Notificator.cs">
       <Link>MCD\Notificator.cs</Link>
     </Compile>
-    <Compile Include="..\src\Service\ClsINIinterop.cs">
-      <Link>Service\ClsINIinterop.cs</Link>
+    <Compile Include="..\src\Utilites\ClsINIinterop.cs">
+      <Link>Utilites\ClsINIinterop.cs</Link>
     </Compile>
     <Compile Include="..\src\Service\CmdInfo.cs">
       <Link>Service\CmdInfo.cs</Link>
     </Compile>
-    <Compile Include="..\src\Service\Msg.cs">
-      <Link>Service\Msg.cs</Link>
+    <Compile Include="..\src\Service\FindCmdInfo.cs">
+      <Link>Service\FindCmdDuplicates.cs</Link>
+    </Compile>
+    <Compile Include="..\src\MesagServise\Msg.cs">
+      <Link>MCD\Msg.cs</Link>
     </Compile>
     <Compile Include="..\src\Utilites\Extensions.cs">
       <Link>Utilites\Extensions.cs</Link>

@@ -35,7 +35,7 @@ EULA:
 using System;
 using System.Runtime.InteropServices;
 
-namespace drz.Infrastructure.Service
+namespace drz.Infrastructure.Utilites
 {
     /// <summary>
     /// Чтение и запись в файлы ИНИ

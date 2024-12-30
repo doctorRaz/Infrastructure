@@ -40,17 +40,20 @@
 	  <DefineConstants>$(DefineConstants);NC</DefineConstants>
 	</PropertyGroup>
 <ItemGroup>
-    <Compile Include="..\src\MCD\Notificator.cs">
-      <Link>MCD\Notificator.cs</Link>
+    <Compile Include="..\src\MesagServise\Notificator.cs">
+      <Link>MesagServise\Notificator.cs</Link>
     </Compile>
-    <Compile Include="..\src\Service\ClsINIinterop.cs">
-      <Link>Service\ClsINIinterop.cs</Link>
+    <Compile Include="..\src\Utilites\ClsINIinterop.cs">
+      <Link>Utilites\ClsINIinterop.cs</Link>
     </Compile>
     <Compile Include="..\src\Service\CmdInfo.cs">
       <Link>Service\CmdInfo.cs</Link>
     </Compile>
-    <Compile Include="..\src\Service\Msg.cs">
-      <Link>Service\Msg.cs</Link>
+    <Compile Include="..\src\Service\FindCmdInfo.cs">
+      <Link>Service\FindCmdDuplicates.cs</Link>
+    </Compile>
+    <Compile Include="..\src\MesagServise\Msg.cs">
+      <Link>MesagServise\Msg.cs</Link>
     </Compile>
     <Compile Include="..\src\Utilites\UtilitesString.cs">
       <Link>Utilites\UtilitesString.cs</Link>
@@ -61,5 +64,8 @@
   </ItemGroup>
 <ItemGroup>
   <PackageReference Include="nanoCadCoreMC24.1.NET" Version="1.0.0" />
+</ItemGroup>
+<ItemGroup>
+  <Folder Include="MesagServise\" />
 </ItemGroup>
 </Project>

@@ -54,11 +54,6 @@
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Infrastructure.NF, Version=0.0.9122.38084, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\bin\Release\Infrastructure.NF.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="mapibasetypes, Version=1.0.8031.27361, Culture=neutral, processorArchitecture=AMD64">
       <HintPath>..\packages\nanoCadCoreMC22.0.1.0.0\lib\net45\mapibasetypes.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
@@ -85,6 +80,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NF\Infrastructure.NF.csproj">
+      <Project>{732feb22-469d-47ff-81e4-ff61d67573e2}</Project>
+      <Name>Infrastructure.NF</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

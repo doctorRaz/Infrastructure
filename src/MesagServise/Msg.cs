@@ -18,29 +18,33 @@ using Autodesk.AutoCAD.EditorInput;
 #endif
 
 
-namespace drz.Infrastructure.Service
+namespace drz.Infrastructure.CAD.MessageService
 {
     /// <summary>
     /// сервис сообщений
     /// </summary>
-    public class Msg
+    public partial class Msg
     {
-        public void ErrorMessage(string message)
+        public void MsgError(string message)
         {
             MessageBox.Show(message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        public void InfoMessage(string message)
+        public void MsgInfo(string message)
         {
             MessageBox.Show(message, "Инфо", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+        public void MsgWarning(string message)
+        {
+            MessageBox.Show(message, "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
 
-        public void ConsoleMessage(string message)
+        public void MsgConsole(string message)
         {
             Document doc = Application.DocumentManager.MdiActiveDocument;
             if (doc == null)
             {
-                InfoMessage(message);
+                MsgInfo(message);
             }
 
             Editor ed = doc.Editor;

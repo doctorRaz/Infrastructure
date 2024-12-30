@@ -7,7 +7,7 @@
 		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 		<UseWPF>true</UseWPF>
 		<UseWindowsForms>true</UseWindowsForms>
-		<BaseOutputPath>..\bin</BaseOutputPath>
+		<BaseOutputPath>..\..\bin</BaseOutputPath>
 		<RootNamespace>drz.Reflection</RootNamespace>
 				<!--атрибуты сборки-->
 	<GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
@@ -40,25 +40,25 @@
 	  <DefineConstants>$(DefineConstants);NC</DefineConstants>
 	</PropertyGroup>
 <ItemGroup>
-    <Compile Include="..\src\MesagServise\Notificator.cs">
+    <Compile Include="..\..\src\MesagServise\Notificator.cs">
       <Link>MesagServise\Notificator.cs</Link>
     </Compile>
-    <Compile Include="..\src\Utilites\ClsINIinterop.cs">
+    <Compile Include="..\..\src\Utilites\ClsINIinterop.cs">
       <Link>Utilites\ClsINIinterop.cs</Link>
     </Compile>
-    <Compile Include="..\src\Service\CmdInfo.cs">
+    <Compile Include="..\..\src\Service\CmdInfo.cs">
       <Link>Service\CmdInfo.cs</Link>
     </Compile>
-    <Compile Include="..\src\Service\FindCmdInfo.cs">
+    <Compile Include="..\..\src\Service\FindCmdInfo.cs">
       <Link>Service\FindCmdDuplicates.cs</Link>
     </Compile>
-    <Compile Include="..\src\MesagServise\Msg.cs">
+    <Compile Include="..\..\src\MesagServise\Msg.cs">
       <Link>MesagServise\Msg.cs</Link>
     </Compile>
-    <Compile Include="..\src\Utilites\UtilitesString.cs">
+    <Compile Include="..\..\src\Utilites\UtilitesString.cs">
       <Link>Utilites\UtilitesString.cs</Link>
     </Compile>
-    <Compile Include="..\src\Utilites\Extensions.cs">
+    <Compile Include="..\..\src\Utilites\Extensions.cs">
       <Link>Utilites\Extensions.cs</Link>
     </Compile>
   </ItemGroup>

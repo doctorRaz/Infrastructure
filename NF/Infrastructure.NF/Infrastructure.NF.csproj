@@ -18,7 +18,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\Debug\</OutputPath>
+    <OutputPath>..\..\bin\Debug\</OutputPath>
     <DefineConstants>TRACE;DEBUG;NC</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -30,38 +30,38 @@
     <StartupObject />
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
-    <OutputPath>..\bin\Release\</OutputPath>
+    <OutputPath>..\..\bin\Release\</OutputPath>
     <DefineConstants>NC</DefineConstants>
     <Optimize>true</Optimize>
     <!--<PlatformTarget>AnyCPU</PlatformTarget>-->
     <TargetName>$(AssemblyName)$(PlatformTarget)</TargetName>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <Prefer32Bit>false</Prefer32Bit>
-    <DocumentationFile>..\bin\Release\Infrastructure.NF.xml</DocumentationFile>
+    <DocumentationFile>..\..\bin\Release\Infrastructure.NF.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="hostdbmgd, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\nanoCadCoreMC22.0.1.0.0\lib\net45\hostdbmgd.dll</HintPath>
+      <HintPath>..\..\packages\nanoCadCoreMC22.0.1.0.0\lib\net45\hostdbmgd.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
     </Reference>
     <Reference Include="hostmgd, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\nanoCadCoreMC22.0.1.0.0\lib\net45\hostmgd.dll</HintPath>
+      <HintPath>..\..\packages\nanoCadCoreMC22.0.1.0.0\lib\net45\hostmgd.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
     </Reference>
     <Reference Include="imapimgd, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\nanoCadCoreMC22.0.1.0.0\lib\net45\imapimgd.dll</HintPath>
+      <HintPath>..\..\packages\nanoCadCoreMC22.0.1.0.0\lib\net45\imapimgd.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
     </Reference>
     <Reference Include="mapibasetypes, Version=1.0.8031.27361, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\nanoCadCoreMC22.0.1.0.0\lib\net45\mapibasetypes.dll</HintPath>
+      <HintPath>..\..\packages\nanoCadCoreMC22.0.1.0.0\lib\net45\mapibasetypes.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
     </Reference>
     <Reference Include="mapimgd, Version=1.0.8031.27444, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\nanoCadCoreMC22.0.1.0.0\lib\net45\mapimgd.dll</HintPath>
+      <HintPath>..\..\packages\nanoCadCoreMC22.0.1.0.0\lib\net45\mapimgd.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
     </Reference>
@@ -77,25 +77,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\src\MesagServise\Notificator.cs">
+    <Compile Include="..\..\src\MesagServise\Notificator.cs">
       <Link>MCD\Notificator.cs</Link>
     </Compile>
-    <Compile Include="..\src\Utilites\ClsINIinterop.cs">
+    <Compile Include="..\..\src\Utilites\ClsINIinterop.cs">
       <Link>Utilites\ClsINIinterop.cs</Link>
     </Compile>
-    <Compile Include="..\src\Service\CmdInfo.cs">
+    <Compile Include="..\..\src\Service\CmdInfo.cs">
       <Link>Service\CmdInfo.cs</Link>
     </Compile>
-    <Compile Include="..\src\Service\FindCmdInfo.cs">
+    <Compile Include="..\..\src\Service\FindCmdInfo.cs">
       <Link>Service\FindCmdDuplicates.cs</Link>
     </Compile>
-    <Compile Include="..\src\MesagServise\Msg.cs">
+    <Compile Include="..\..\src\MesagServise\Msg.cs">
       <Link>MCD\Msg.cs</Link>
     </Compile>
-    <Compile Include="..\src\Utilites\Extensions.cs">
+    <Compile Include="..\..\src\Utilites\Extensions.cs">
       <Link>Utilites\Extensions.cs</Link>
     </Compile>
-    <Compile Include="..\src\Utilites\UtilitesString.cs">
+    <Compile Include="..\..\src\Utilites\UtilitesString.cs">
       <Link>Utilites\UtilitesString.cs</Link>
     </Compile>
   </ItemGroup>

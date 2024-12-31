@@ -1,5 +1,5 @@
 ﻿//https://autolisp.ru/2024/10/29/nanocad-vyvod-komand-s-ix-opisaniem-cherez-net/ 
-
+//https://adn-cis.org/programmnoe-opredelenie-dublirovannyix-imen-.net-komand.html
 using System.Reflection;
 using System;
 using System.Collections.Generic;
@@ -17,9 +17,8 @@ using Autodesk.AutoCAD.Runtime;
 
 namespace drz.Infrastructure.CAD.Service
 {
-
     /// <summary>
-    /// https://adn-cis.org/programmnoe-opredelenie-dublirovannyix-imen-.net-komand.html
+    /// Информация о командах CAD
     /// </summary>
     public class CmdDuplInfo
     {
@@ -39,7 +38,7 @@ namespace drz.Infrastructure.CAD.Service
             /// <summary>
             /// Имя метода
             /// </summary>
-            internal string MethodAttr { get; set; }
+            internal string   MethodAttr { get; set; }
 
             /// <summary>
             ///Описание метода
@@ -83,7 +82,7 @@ namespace drz.Infrastructure.CAD.Service
         /// <value>
         ///   <c>true</c> if [b method information]; otherwise, <c>false</c>.
         /// </value>
-        bool bMethodInfo { get; set; } = false;
+        bool bMethodInfo { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CmdInfo"/> class.

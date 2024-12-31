@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("FindCmdInfo")]
+[assembly: AssemblyTitle("CmdDuplInfo")]
 [assembly: AssemblyDescription("Поиск информации о командах CAD")]
 [assembly: AssemblyConfiguration("")]
 // [assembly: AssemblyCompany("")]
 [assembly: AssemblyCompany("doctorRaz@gmail.com")]
-[assembly: AssemblyProduct("FindCmdInfo.NF")]
+[assembly: AssemblyProduct("CmdDuplInfo.NF")]
 // [assembly: AssemblyCopyright("Copyright ©  2024")]
 [assembly: AssemblyCopyright("© Разыграев Андрей 2014-2025")]
 [assembly: AssemblyTrademark("©doctorRAZ")]

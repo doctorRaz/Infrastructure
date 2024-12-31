@@ -10,5 +10,5 @@ https://autolisp.ru/2024/10/29/nanocad-vyvod-komand-s-ix-opisaniem-cherez-net/ \
 	* Сравнение версий сборок
 	* конвертация XmlDocument в XDocument
 	* конвертация XDocument в XmlDocument
-5. `UtilString` Утилиты и подпрограммы для работы со строками
+5. `UtilString` Работа со строками
 

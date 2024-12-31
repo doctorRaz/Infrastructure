@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{1923BD11-0E59-88CB-5FF6-ABE58AB4C5BC}</ProjectGuid>
+    <ProjectGuid>{DAA516EF-7E7A-B944-808F-6A6E4387263A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>drz.Infrastructure</RootNamespace>
-    <AssemblyName>UtilitesString.NF</AssemblyName>
+    <AssemblyName>Extensions.NF</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -37,7 +37,7 @@
     <TargetName>$(AssemblyName)$(PlatformTarget)</TargetName>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <Prefer32Bit>false</Prefer32Bit>
-    <DocumentationFile>..\..\bin\Release\UtilitesString.NF.xml</DocumentationFile>
+    <DocumentationFile>..\..\bin\Release\Extensions.NF.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic" />
@@ -52,8 +52,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\src\Utilites\UtilitesString.cs">
-      <Link>UtilitesString.cs</Link>
+    <Compile Include="..\..\src\Utilites\Extensions.cs">
+      <Link>Extensions.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

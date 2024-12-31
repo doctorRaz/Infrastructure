@@ -24,6 +24,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClsIni.NF", "NF\ClsIni.NF\C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilitesString.NF", "NF\UtilitesString.NF\UtilitesString.NF.csproj", "{1923BD11-0E59-88CB-5FF6-ABE58AB4C5BC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Extensions.NF", "NF\Extensions.NF\Extensions.NF.csproj", "{DAA516EF-7E7A-B944-808F-6A6E4387263A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,6 +60,10 @@ Global
 		{1923BD11-0E59-88CB-5FF6-ABE58AB4C5BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1923BD11-0E59-88CB-5FF6-ABE58AB4C5BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1923BD11-0E59-88CB-5FF6-ABE58AB4C5BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAA516EF-7E7A-B944-808F-6A6E4387263A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAA516EF-7E7A-B944-808F-6A6E4387263A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAA516EF-7E7A-B944-808F-6A6E4387263A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAA516EF-7E7A-B944-808F-6A6E4387263A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,6 +75,7 @@ Global
 		{B438F9F9-2670-C717-77C8-5C8633BFE162} = {945C12FE-B4E6-44FD-9F66-BF5761540C70}
 		{1BEA14B2-A7C5-9E9A-A926-FBC1564E3DE9} = {945C12FE-B4E6-44FD-9F66-BF5761540C70}
 		{1923BD11-0E59-88CB-5FF6-ABE58AB4C5BC} = {945C12FE-B4E6-44FD-9F66-BF5761540C70}
+		{DAA516EF-7E7A-B944-808F-6A6E4387263A} = {945C12FE-B4E6-44FD-9F66-BF5761540C70}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {78FDA626-FD2E-4796-A661-4ED3535E4B50}

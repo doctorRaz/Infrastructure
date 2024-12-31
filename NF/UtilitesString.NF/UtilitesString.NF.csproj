@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{FB8417C2-1137-05D0-9A71-812B1CA1E2B6}</ProjectGuid>
+    <ProjectGuid>{1923BD11-0E59-88CB-5FF6-ABE58AB4C5BC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>drz.Infrastructure</RootNamespace>
-    <AssemblyName>MessageService.NF</AssemblyName>
+    <AssemblyName>UtilitesString.NF</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -37,34 +37,9 @@
     <TargetName>$(AssemblyName)$(PlatformTarget)</TargetName>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <Prefer32Bit>false</Prefer32Bit>
-    <DocumentationFile>..\..\bin\Release\MessageService.NF.xml</DocumentationFile>
+    <DocumentationFile>..\..\bin\Release\UtilitesString.NF.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="hostdbmgd, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\..\packages\nanoCadCoreMC22.0.1.0.0\lib\net45\hostdbmgd.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="hostmgd, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\..\packages\nanoCadCoreMC22.0.1.0.0\lib\net45\hostmgd.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="imapimgd, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\..\packages\nanoCadCoreMC22.0.1.0.0\lib\net45\imapimgd.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="mapibasetypes, Version=1.0.8031.27361, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\..\packages\nanoCadCoreMC22.0.1.0.0\lib\net45\mapibasetypes.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="mapimgd, Version=1.0.8031.27444, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\..\packages\nanoCadCoreMC22.0.1.0.0\lib\net45\mapimgd.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -77,16 +52,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\src\MesagServise\Msg.cs">
-      <Link>Msg.cs</Link>
+    <Compile Include="..\..\src\Utilites\Extensions.cs">
+      <Link>Extensions.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\MesagServise\Notificator.cs">
-      <Link>Notificator.cs</Link>
+    <Compile Include="..\..\src\Utilites\UtilitesString.cs">
+      <Link>UtilitesString.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -8,8 +8,8 @@
     <ProjectGuid>{75B4711A-B866-4416-A1F3-CAFE10FE9352}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>nanoCADCommandsReflection</RootNamespace>
-    <AssemblyName>Test CMD</AssemblyName>
+    <RootNamespace>drz</RootNamespace>
+    <AssemblyName>Test CMD info NF</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

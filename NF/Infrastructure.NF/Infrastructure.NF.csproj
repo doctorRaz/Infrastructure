@@ -8,7 +8,7 @@
     <ProjectGuid>{732FEB22-469D-47FF-81E4-FF61D67573E2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>drz.Reflection</RootNamespace>
+    <RootNamespace>drz.Infrastructure</RootNamespace>
     <AssemblyName>Infrastructure.NF</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

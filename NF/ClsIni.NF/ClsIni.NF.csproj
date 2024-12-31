@@ -8,8 +8,8 @@
     <ProjectGuid>{1BEA14B2-A7C5-9E9A-A926-FBC1564E3DE9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>drz.Reflection</RootNamespace>
-    <AssemblyName>Utility.NF</AssemblyName>
+    <RootNamespace>drz.Infrastructure</RootNamespace>
+    <AssemblyName>ClsIni.NF</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -37,7 +37,7 @@
     <TargetName>$(AssemblyName)$(PlatformTarget)</TargetName>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <Prefer32Bit>false</Prefer32Bit>
-    <DocumentationFile>..\..\bin\Release\Utility.NF.xml</DocumentationFile>
+    <DocumentationFile>..\..\bin\Release\ClsIni.NF.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic" />
@@ -53,18 +53,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\..\src\Utilites\ClsINIinterop.cs">
-      <Link>Utilites\ClsINIinterop.cs</Link>
-    </Compile>
-    <Compile Include="..\..\src\Utilites\Extensions.cs">
-      <Link>Utilites\Extensions.cs</Link>
-    </Compile>
-    <Compile Include="..\..\src\Utilites\UtilitesString.cs">
-      <Link>Utilites\UtilitesString.cs</Link>
+      <Link>ClsINIinterop.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

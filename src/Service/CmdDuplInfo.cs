@@ -38,7 +38,7 @@ namespace drz.Infrastructure.CAD.Service
             /// <summary>
             /// Имя метода
             /// </summary>
-            internal string   MethodAttr { get; set; }
+            internal string    MethodAttr { get; set; }
 
             /// <summary>
             ///Описание метода
@@ -91,7 +91,7 @@ namespace drz.Infrastructure.CAD.Service
         {
             bMethodInfo = _bMethodInfo;
             asm = Assembly.GetExecutingAssembly();
-            mapInfo = new Dictionary<string, List<CmdList>>();
+            //mapInfo = new Dictionary<string, List<CmdList>>();
             Reflection();
         }
 
@@ -103,7 +103,7 @@ namespace drz.Infrastructure.CAD.Service
         {
             bMethodInfo = _bMethodInfo;
             asm = _asm;
-            mapInfo = new Dictionary<string, List<CmdList>>();
+            //mapInfo = new Dictionary<string, List<CmdList>>();
             Reflection();
         }
 
@@ -115,7 +115,7 @@ namespace drz.Infrastructure.CAD.Service
         {
 
             //Dictionary<string, List<CmdList>> 
-            //mapInfo = new Dictionary<string, List<CmdList>>();
+            mapInfo = new Dictionary<string, List<CmdList>>();
 
 
             Type[] expTypes = asm.GetTypes();
@@ -140,7 +140,7 @@ namespace drz.Infrastructure.CAD.Service
                     mapInfo[cinf.MethodAttr].Add(cinf);
                 }
             }
-            string sMethod = "";
+            string sMethod;
 
             foreach (KeyValuePair<string, List<CmdList>> keyValuePair in mapInfo)
             {

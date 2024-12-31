@@ -79,84 +79,21 @@ namespace drz.test
         [Description("Test 1 : Получение списка команд с описаниями" /*+ nameof(test_cmd)*/)]
         public void test_cmd()
         {
-            CmdDuplInfo CDI = new CmdDuplInfo(Assembly.GetExecutingAssembly(),true);
-
-            var lll = CDI.mapInfo;
-
-
-            Msg msgService = new Msg();
-            if (!string.IsNullOrEmpty(CDI.sCmdInfo))
-            {
-                msgService.MsgConsole(CDI.sCmdInfo);
-            }
-            else
-            {
-                msgService.MsgConsole("Нет зарегистрированных команд");
-            }
-
-            if (!string.IsNullOrEmpty(CDI.sDuplInfo))
-            {
-                msgService.MsgConsole("_____________________");
-                msgService.MsgConsole(CDI.sDuplInfo);
-                msgService.MsgConsole("_____________________");
-
-            }
+            ListCMD(true);
         }
 
         [Rtm.CommandMethod("t1drz_false", Rtm.CommandFlags.Session)]
         [Description("Test 1 : Получение списка команд с описаниями" /*+ nameof(test_cmd)*/)]
         public void test_cmd1()
         {
-            CmdDuplInfo CDI = new CmdDuplInfo(Assembly.GetExecutingAssembly(), false);
-
-            var lll = CDI.mapInfo;
-
-
-            Msg msgService = new Msg();
-            if (!string.IsNullOrEmpty(CDI.sCmdInfo))
-            {
-                msgService.MsgConsole(CDI.sCmdInfo);
-            }
-            else
-            {
-                msgService.MsgConsole("Нет зарегистрированных команд");
-            }
-
-            if (!string.IsNullOrEmpty(CDI.sDuplInfo))
-            {
-                msgService.MsgConsole("_____________________");
-                msgService.MsgConsole(CDI.sDuplInfo);
-                msgService.MsgConsole("_____________________");
-
-            }
+            ListCMD(false);
         }
 
         [Rtm.CommandMethod("t1drz_default", Rtm.CommandFlags.Session)]
         [Description("Test 1 : Получение списка команд с описаниями" /*+ nameof(test_cmd)*/)]
         public void test_cmddef()
         {
-            CmdDuplInfo CDI = new CmdDuplInfo(Assembly.GetExecutingAssembly());
-
-            var lll = CDI.mapInfo;
-
-
-            Msg msgService = new Msg();
-            if (!string.IsNullOrEmpty(CDI.sCmdInfo))
-            {
-                msgService.MsgConsole(CDI.sCmdInfo);
-            }
-            else
-            {
-                msgService.MsgConsole("Нет зарегистрированных команд");
-            }
-
-            if (!string.IsNullOrEmpty(CDI.sDuplInfo))
-            {
-                msgService.MsgConsole("_____________________");
-                msgService.MsgConsole(CDI.sDuplInfo);
-                msgService.MsgConsole("_____________________");
-
-            }
+            ListCMD();
         }
 
         //---
@@ -211,12 +148,12 @@ namespace drz.test
         /// <summary>
         /// Lists the command.
         /// </summary>
-        void ListCMD()
+        void ListCMD(bool bMethod = false)
         {
             //выводим список команд с описаниями
-            CmdDuplInfo CDI = new CmdDuplInfo(Assembly.GetExecutingAssembly());
+            CmdDuplInfo CDI = new CmdDuplInfo(Assembly.GetExecutingAssembly(), bMethod);
 
-            var lll = CDI.mapInfo;
+            System.Collections.Generic.Dictionary<string, System.Collections.Generic.List<CmdDuplInfo.CmdList>> lll = CDI.mapInfo;
 
 
             Msg msgService = new Msg();
@@ -231,9 +168,9 @@ namespace drz.test
 
             if (!string.IsNullOrEmpty(CDI.sDuplInfo))
             {
-                msgService.MsgConsole("_____________________");
+                //msgService.MsgConsole("_____________________");
                 msgService.MsgConsole(CDI.sDuplInfo);
-                msgService.MsgConsole("_____________________");
+                //msgService.MsgConsole("_____________________");
 
             }
         }

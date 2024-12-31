@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{732FEB22-469D-47FF-81E4-FF61D67573E2}</ProjectGuid>
+    <ProjectGuid>{FB8417C2-1137-05D0-9A71-812B1CA1E2B6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>drz.Reflection</RootNamespace>
-    <AssemblyName>Infrastructure.NF</AssemblyName>
+    <AssemblyName>MessageService.NF</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -37,7 +37,7 @@
     <TargetName>$(AssemblyName)$(PlatformTarget)</TargetName>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <Prefer32Bit>false</Prefer32Bit>
-    <DocumentationFile>..\..\bin\Release\Infrastructure.NF.xml</DocumentationFile>
+    <DocumentationFile>..\..\bin\Release\MessageService.NF.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="hostdbmgd, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
@@ -78,25 +78,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\..\src\MesagServise\Msg.cs">
-      <Link>MesagServise\Msg.cs</Link>
+      <Link>Msg.cs</Link>
     </Compile>
     <Compile Include="..\..\src\MesagServise\Notificator.cs">
-      <Link>MesagServise\Notificator.cs</Link>
-    </Compile>
-    <Compile Include="..\..\src\Service\CmdDuplInfo.cs">
-      <Link>Service\CmdDuplInfo.cs</Link>
-    </Compile>
-    <Compile Include="..\..\src\Utilites\ClsINIinterop.cs">
-      <Link>Utilites\ClsINIinterop.cs</Link>
-    </Compile>
-    <Compile Include="..\..\src\Service\CmdInfo.cs">
-      <Link>Service\CmdInfo.cs</Link>
-    </Compile>
-    <Compile Include="..\..\src\Utilites\Extensions.cs">
-      <Link>Utilites\Extensions.cs</Link>
-    </Compile>
-    <Compile Include="..\..\src\Utilites\UtilitesString.cs">
-      <Link>Utilites\UtilitesString.cs</Link>
+      <Link>Notificator.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

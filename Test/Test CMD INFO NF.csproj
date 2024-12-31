@@ -82,9 +82,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NF\Infrastructure.NF\Infrastructure.NF.csproj">
-      <Project>{732feb22-469d-47ff-81e4-ff61d67573e2}</Project>
-      <Name>Infrastructure.NF</Name>
+    <ProjectReference Include="..\NF\CmdDuplInfo.NF\CmdDuplInfo.NF.csproj">
+      <Project>{b438f9f9-2670-c717-77c8-5c8633bfe162}</Project>
+      <Name>CmdDuplInfo.NF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NF\MessageService.NF\MessageService.NF.csproj">
+      <Project>{fb8417c2-1137-05d0-9a71-812b1ca1e2b6}</Project>
+      <Name>MessageService.NF</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Reflection;
 using System;
 
-using drz.Infrastructure.CAD.MessageService;
+
 
 
 
@@ -23,7 +23,7 @@ namespace drz.Infrastructure.CAD.Service
     /// <summary>
     /// читает из сборки имена и описания команд
     /// </summary>
-    public partial class CmdInfo
+    public   class CmdInfo
     {
         /// <summary>
         /// Gets or sets the method attribute.
@@ -50,7 +50,7 @@ namespace drz.Infrastructure.CAD.Service
         /*public*/
         DescriptionAttribute descriptionAttr { get; set; }
 
-        //Assembly asm { get; set; }
+        public  string smes { get; set; }  = "";
 
         /// <summary>
         /// Reflections this instance.
@@ -76,11 +76,11 @@ namespace drz.Infrastructure.CAD.Service
         /// </summary>
         void ReflectionEngine(Assembly asm)
         {
-            Msg msgService = new Msg();
+
 
             Type[] expTyped = asm.GetTypes();
 
-            string smes = "";
+           
             string smetod = "";
             foreach (Type t in expTyped)
             {
@@ -114,7 +114,7 @@ namespace drz.Infrastructure.CAD.Service
                 }
             }
             smes = smes + "___________________________";
-            msgService.MsgConsole(smes);
+
 
         }
 

@@ -21,12 +21,20 @@ namespace drz.Infrastructure.CAD.Service
     /// <summary>
     /// https://adn-cis.org/programmnoe-opredelenie-dublirovannyix-imen-.net-komand.html
     /// </summary>
-    public class FindCmdInfo
+    public class CmdDuplInfo
     {
+        /// <summary>
+        /// Gets or sets the map information.
+        /// </summary>
+        /// <value>
+        /// The map information.
+        /// </value>
+        public Dictionary<string, List<CmdList>> mapInfo { get; set; }
+
         /// <summary>
         /// Список зарегистрированных команд
         /// </summary>
-        class CmdList
+        public class CmdList
         {
             /// <summary>
             /// Имя метода
@@ -42,7 +50,6 @@ namespace drz.Infrastructure.CAD.Service
             /// Имя класса
             /// </summary>
             internal string MethodInfo { get; set; }
-
 
         }
 
@@ -71,21 +78,33 @@ namespace drz.Infrastructure.CAD.Service
         Assembly asm { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="FindCmdInfo"/> class.
+        /// Вывод MethodInfo /[b method information].
         /// </summary>
-        public FindCmdInfo()
+        /// <value>
+        ///   <c>true</c> if [b method information]; otherwise, <c>false</c>.
+        /// </value>
+        bool bMethodInfo { get; set; } = false;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CmdInfo"/> class.
+        /// </summary>
+        public CmdDuplInfo(bool _bMethodInfo = false)
         {
+            bMethodInfo = _bMethodInfo;
             asm = Assembly.GetExecutingAssembly();
+            mapInfo = new Dictionary<string, List<CmdList>>();
             Reflection();
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="FindCmdInfo"/> class.
+        /// Initializes a new instance of the <see cref="CmdInfo"/> class.
         /// </summary>
         /// <param name="_asm">The asm.</param>
-        public FindCmdInfo(Assembly _asm)
+        public CmdDuplInfo(Assembly _asm, bool _bMethodInfo = false)
         {
+            bMethodInfo = _bMethodInfo;
             asm = _asm;
+            mapInfo = new Dictionary<string, List<CmdList>>();
             Reflection();
         }
 
@@ -95,17 +114,14 @@ namespace drz.Infrastructure.CAD.Service
         void Reflection()
         //public void FindCmdDuplicates(string asmPath)
         {
-            //cmdInfo cmdinf = new cmdInfo();
-            Dictionary<string, List<CmdList>> mapInfo =
-                new Dictionary<string, List<CmdList>>();
 
-
-            Dictionary<string, List<MethodInfo>> map =
-                new Dictionary<string, List<MethodInfo>>();
+            //Dictionary<string, List<CmdList>> 
+            //mapInfo = new Dictionary<string, List<CmdList>>();
 
 
             Type[] expTypes = asm.GetTypes();
 
+            //собираем
             foreach (Type type in expTypes)
             {
                 MethodInfo[] methods = type.GetMethods();
@@ -125,7 +141,7 @@ namespace drz.Infrastructure.CAD.Service
                     mapInfo[cinf.MethodAttr].Add(cinf);
                 }
             }
-
+            string sMethod = "";
 
             foreach (KeyValuePair<string, List<CmdList>> keyValuePair in mapInfo)
             {
@@ -142,11 +158,16 @@ namespace drz.Infrastructure.CAD.Service
                 }
                 else
                 {
-#if DEBUG
-                    string sMethod = " [" + keyValuePair.Value[0].MethodInfo + "]";
-#else
-                    string sMethod = "";
-#endif
+                    if (bMethodInfo)
+                    {
+                        sMethod = " [" + keyValuePair.Value[0].MethodInfo + "]";
+                    }
+
+                    else
+                    {
+                        sMethod = "";
+                    }
+
                     if (!string.IsNullOrEmpty(sCmdInfo)) sCmdInfo += "\n";//если дописываем, то перенос
 
                     sCmdInfo += keyValuePair.Key + sMethod + "\t" + keyValuePair.Value[0].DescriptionAttr;

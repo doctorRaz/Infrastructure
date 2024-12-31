@@ -12,12 +12,13 @@
 				<!--атрибуты сборки-->
 	<GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
 		<!--<Title>Updater prep Title</Title>-->
-		<Product>Reflection</Product>
+		<Product>Infrastructure.NF</Product>
 		<Company>doctorRaz@gmail.com</Company>
 		<Authors>Разыграев Андрей</Authors>
-		<Description>Reflection command</Description>
+		<Description>Вспомогательные классы для CAD</Description>
 		<Copyright>Разыграев Андрей</Copyright>
 		<Trademark>©doctorRAZ 2014-2024</Trademark>
+		<AssemblyName>Infrastructure.NET</AssemblyName>
 		<!--атрибуты сборки-->
 		
 		<!--<Version />-->
@@ -27,9 +28,12 @@
 		<AssemblyVersion>0.0.*</AssemblyVersion>
 		<!--<Version />-->
 
-		<AssemblyName>Infrastructure.NET</AssemblyName>
 
 		<PlatformTarget>x64</PlatformTarget>
+
+		<PackageReleaseNotes>заметки о выпуске</PackageReleaseNotes>
+
+		<PackageTags>теги;слова</PackageTags>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -43,14 +47,12 @@
     <Compile Include="..\..\src\MesagServise\Notificator.cs">
       <Link>MesagServise\Notificator.cs</Link>
     </Compile>
+    <Compile Include="..\..\src\Service\CmdDuplInfo.cs" Link="Service\CmdDuplInfo.cs" />
     <Compile Include="..\..\src\Utilites\ClsINIinterop.cs">
       <Link>Utilites\ClsINIinterop.cs</Link>
     </Compile>
     <Compile Include="..\..\src\Service\CmdInfo.cs">
       <Link>Service\CmdInfo.cs</Link>
-    </Compile>
-    <Compile Include="..\..\src\Service\FindCmdInfo.cs">
-      <Link>Service\FindCmdDuplicates.cs</Link>
     </Compile>
     <Compile Include="..\..\src\MesagServise\Msg.cs">
       <Link>MesagServise\Msg.cs</Link>

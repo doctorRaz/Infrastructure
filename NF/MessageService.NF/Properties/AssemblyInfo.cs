@@ -5,24 +5,24 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Infrastructure Title")]
-[assembly: AssemblyDescription("Вспомогательные классы для CAD")]
+[assembly: AssemblyTitle("MessageService")]
+[assembly: AssemblyDescription("Сервис сообщений")]
 [assembly: AssemblyConfiguration("")]
 // [assembly: AssemblyCompany("")]
 [assembly: AssemblyCompany("doctorRaz@gmail.com")]
-[assembly: AssemblyProduct("Infrastructure.NF")]
+[assembly: AssemblyProduct("MessageService.NF")]
 // [assembly: AssemblyCopyright("Copyright ©  2024")]
 [assembly: AssemblyCopyright("© Разыграев Андрей 2014-2025")]
 [assembly: AssemblyTrademark("©doctorRAZ")]
 [assembly: AssemblyCulture("")]
-[assembly: AssemblyInformationalVersion("Infrastructure")]
+[assembly: AssemblyInformationalVersion("FindCmdInfo for nanoCAD")]
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 
 // COM, set the ComVisible attribute to true on that type.
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("732feb22-469d-47ff-81e4-ff61d67573e2")]
+[assembly: Guid("FB8417C2-1137-05D0-9A71-812B1CA1E2B6")]
 
 // Version information for an assembly consists of the following four values:
 //

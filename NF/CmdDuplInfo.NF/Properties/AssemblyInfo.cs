@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("FindCmdInfo.NF")]
+[assembly: AssemblyTitle("FindCmdInfo")]
 [assembly: AssemblyDescription("Поиск информации о командах CAD")]
 [assembly: AssemblyConfiguration("")]
 // [assembly: AssemblyCompany("")]
 [assembly: AssemblyCompany("doctorRaz@gmail.com")]
-[assembly: AssemblyProduct("Infrastructure")]
+[assembly: AssemblyProduct("FindCmdInfo.NF")]
 // [assembly: AssemblyCopyright("Copyright ©  2024")]
 [assembly: AssemblyCopyright("© Разыграев Андрей 2014-2025")]
 [assembly: AssemblyTrademark("©doctorRAZ")]
@@ -22,7 +22,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("732feb22-469d-47ff-81e4-ff61d67573e2")]
+[assembly: Guid("B438F9F9-2670-C717-77C8-5C8633BFE162")]
 
 // Version information for an assembly consists of the following four values:
 //

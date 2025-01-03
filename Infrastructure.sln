@@ -32,6 +32,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.NET", "NET\I
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageService.NET", "NET\MessageService.NET\MessageService.NET.csproj", "{16652DA4-2C7E-6021-C5BA-F7A44BCB9398}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NET2.0", "NET2.0", "{36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}"
+	ProjectSection(SolutionItems) = preProject
+		src\MesagServise\Msg.cs = src\MesagServise\Msg.cs
+		src\MesagServise\Notificator.cs = src\MesagServise\Notificator.cs
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageService2.0", "NET2.0\MessageService2.0\MessageService2.0.csproj", "{8DFCA3F0-C7ED-4F92-93B4-15F812ED595D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -82,6 +90,10 @@ Global
 		{16652DA4-2C7E-6021-C5BA-F7A44BCB9398}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16652DA4-2C7E-6021-C5BA-F7A44BCB9398}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16652DA4-2C7E-6021-C5BA-F7A44BCB9398}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DFCA3F0-C7ED-4F92-93B4-15F812ED595D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DFCA3F0-C7ED-4F92-93B4-15F812ED595D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DFCA3F0-C7ED-4F92-93B4-15F812ED595D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DFCA3F0-C7ED-4F92-93B4-15F812ED595D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -96,6 +108,7 @@ Global
 		{DF71A340-D969-4EA2-AC0F-2DDC31F07EFC} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
 		{63054496-F5E4-9E3D-3064-6187CDB880FE} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
 		{16652DA4-2C7E-6021-C5BA-F7A44BCB9398} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
+		{8DFCA3F0-C7ED-4F92-93B4-15F812ED595D} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E3BD4D2F-2C64-41CC-A702-00D7F886D28D}

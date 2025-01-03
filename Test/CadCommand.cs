@@ -99,7 +99,7 @@ namespace drz.test
 
             //System.Collections.Generic.Dictionary<string, System.Collections.Generic.List<CmdDuplInfo.CmdList>> cdi = CadCommand.CDI.mapInfo;
             string sTitleAttribute = AI.sTitleAttribute;
-            string sVersion = AsmInfo.sVersion;
+            string sVersion = AI.sVersion;
 
             Msg msgService = new Msg();
             msgService.MsgConsole(sTitleAttribute + " " + sVersion);
@@ -156,41 +156,7 @@ namespace drz.test
             msgService.MsgConsole("Test2 command");
         }
 
-        [Rtm.CommandMethod("t2_drz_MyCommand2", Rtm.CommandFlags.Session)]
-        [Description("Test 2 : дубль 1 1 " /*+ nameof(test_cmd2)*/)]
-        public void test_cmd21()
-        {
-            msgService.MsgConsole("Test2 command");
-        }
 
-        /// <summary>
-        /// дубль  1 3 без описания
-        /// </summary>
-        [Rtm.CommandMethod("t2_drz_MyCommand2", Rtm.CommandFlags.Session)]
-        public void test_cmd200()
-        {
-            msgService.MsgConsole("Test2 command");
-        }
-
-        [Rtm.CommandMethod("t2_drz_MyCommand", Rtm.CommandFlags.Session)]
-        [Description("Test 2 : дубль 2 1 " /*+ nameof(test_cmd2)*/)]
-        public void test_cmd20()
-        {
-            msgService.MsgConsole("Test2 command");
-        }
-        [Rtm.CommandMethod("t2_drz_MyCommand", Rtm.CommandFlags.Session)]
-        [Description("Test 2 : дубль 2 2 " /*+ nameof(test_cmd2)*/)]
-
-        public void test_cmd2000()
-        {
-            msgService.MsgConsole("Test2 command");
-        }
-
-        [Rtm.CommandMethod("t2_drz_MyCommand", Rtm.CommandFlags.Session)]
-        public void test_cmd20k()
-        {
-            msgService.MsgConsole("Test2 command");
-        }
 
 
         #endregion

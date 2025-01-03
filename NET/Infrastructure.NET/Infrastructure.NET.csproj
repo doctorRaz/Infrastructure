@@ -10,9 +10,9 @@
 		<BaseOutputPath>..\..\bin</BaseOutputPath>
 		<RootNamespace>drz.Reflection</RootNamespace>
 				<!--атрибуты сборки-->
-	<GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+	<!--<GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>-->
 		<!--<Title>Updater prep Title</Title>-->
-		<Product>Infrastructure.NET</Product>
+		<Product>Infrastructure</Product>
 		<Company>doctorRaz@gmail.com</Company>
 		<Authors>Разыграев Андрей</Authors>
 		<Description>Вспомогательные классы для CAD</Description>

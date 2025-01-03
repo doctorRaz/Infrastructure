@@ -83,13 +83,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NET2.0\MessageService2.0\MessageService2.0.csproj">
-      <Project>{8dfca3f0-c7ed-4f92-93b4-15f812ed595d}</Project>
-      <Name>MessageService2.0</Name>
-    </ProjectReference>
     <ProjectReference Include="..\NF\AsmInfo\AsmInfo.csproj">
       <Project>{b438f9f9-2670-c717-77c8-5c8633bfe162}</Project>
       <Name>AsmInfo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NF\MessageService\MessageService.csproj">
+      <Project>{fb8417c2-1137-05d0-9a71-812b1ca1e2b6}</Project>
+      <Name>MessageService</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

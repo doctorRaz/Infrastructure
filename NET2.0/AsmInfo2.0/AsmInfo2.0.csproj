@@ -10,11 +10,11 @@
 
 		<!--атрибуты сборки-->
 		<!--<GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>-->
-		<AssemblyName>MessageService.2.0</AssemblyName>
+		<!--<AssemblyName>MessageService.2.0</AssemblyName>-->
 		<ProduceReferenceAssembly>false</ProduceReferenceAssembly>
 		<SignAssembly>False</SignAssembly>
 		<!--<Title>Updater prep Title</Title>-->
-		<Product>MessageService.2.0</Product>
+		<Product>AsmInfo</Product>
 		<Company>doctorRaz@gmail.com</Company>
 		<Authors>Разыграев Андрей</Authors>
 		<Description>Вспомогательные классы для CAD</Description>
@@ -43,19 +43,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Compile Include="..\..\src\MesagServise\Msg.cs" Link="Msg.cs" />
-		<Compile Include="..\..\src\MesagServise\Notificator.cs" Link="Notificator.cs" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<PackageReference Include="nanoCadCoreMC22.0" Version="1.0.0" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Reference Include="System.Windows.Forms">
-	    <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll</HintPath>
-	    <Private>False</Private>
-	  </Reference>
 	</ItemGroup>
 
 </Project>

@@ -5,6 +5,8 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+	  	<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<BaseOutputPath>..\..\bin</BaseOutputPath>
 	  <UseWindowsForms>True</UseWindowsForms>
 	 	<!--<GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>-->
  
@@ -26,10 +28,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\NET2.0\MessageService2.0\MessageService2.0.csproj" />
     <ProjectReference Include="..\..\NF\AsmInfo\AsmInfo.csproj">
       <Private>True</Private>
     </ProjectReference>
+    <ProjectReference Include="..\..\NF\MessageService\MessageService.csproj" />
   </ItemGroup>
 
 </Project>

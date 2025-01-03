@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 // [assembly: AssemblyCompany("")]
 [assembly: AssemblyCompany("doctorRaz@gmail.com")]
-[assembly: AssemblyProduct("ClsIni.NF")]
+[assembly: AssemblyProduct("ClsIni")]
 // [assembly: AssemblyCopyright("Copyright ©  2024")]
 [assembly: AssemblyCopyright("© Разыграев Андрей 2014-2025")]
 [assembly: AssemblyTrademark("©doctorRAZ")]

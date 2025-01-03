@@ -18,6 +18,26 @@ namespace drz.Infrastructure.CAD.Service
         #endregion
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         /// <summary>
         /// Initializes a new instance of the <see cref="AsmInfo"/> class.
         /// </summary>
@@ -138,7 +158,7 @@ namespace drz.Infrastructure.CAD.Service
         public string sAsmFileName => Path.GetFileName(sAsmFulPath);
 
         /// <summary>версия программы </summary>
-        public string sVersionBeta => iMajor.ToString()
+        public string sVersion => iMajor.ToString()
                                          + "."
                                          + iMinor.ToString()
                                          + "."
@@ -146,7 +166,7 @@ namespace drz.Infrastructure.CAD.Service
                                          + _sBeta//_sysVersion.ToString() + _sBeta;
                                          ;
         /// <summary>Полная версия с окончанием </summary>
-        public string sVersionFullBeta => iMajor.ToString()
+        public string sVersionFull => iMajor.ToString()
                                              + "."
                                              + iMinor.ToString()
                                              + "."
@@ -154,14 +174,6 @@ namespace drz.Infrastructure.CAD.Service
                                              + "."
                                              + iRevision.ToString()
                                              + _sBeta;//_sysVersion.ToString() + _sBeta;
-
-        /// <summary>
-        /// Gets the s version full.
-        /// </summary>
-        /// <value>
-        /// The s version full.
-        /// </value>
-        public string sVersionFull => sysVersion.ToString();
 
         /// <summary>Полная версия без окончания </summary>
         public string sVersionShort => iMajor.ToString()

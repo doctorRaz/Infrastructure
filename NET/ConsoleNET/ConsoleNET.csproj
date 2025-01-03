@@ -5,6 +5,7 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+	  <UseWindowsForms>True</UseWindowsForms>
 	 	<!--<GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>-->
  
 		<Title>Updater prep Title</Title>
@@ -25,20 +26,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\NET2.0\MessageService2.0\MessageService2.0.csproj" />
     <ProjectReference Include="..\..\NF\AsmInfo\AsmInfo.csproj">
       <Private>True</Private>
     </ProjectReference>
-    <ProjectReference Include="..\MessageService.NET\MessageService.NET.csproj">
-      <Private>True</Private>
-    </ProjectReference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="System.Windows.Forms">
-      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll</HintPath>
-      <Private>False</Private>
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
   </ItemGroup>
 
 </Project>

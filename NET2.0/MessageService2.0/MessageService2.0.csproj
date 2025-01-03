@@ -5,8 +5,27 @@
     <RootNamespace>MessageService</RootNamespace>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>$(DefineConstants);NC</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>$(DefineConstants);NC</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\src\MesagServise\Msg.cs" Link="Msg.cs" />
+    <Compile Include="..\..\src\MesagServise\Notificator.cs" Link="Notificator.cs" />
+  </ItemGroup>
+
   <ItemGroup>
     <PackageReference Include="nanoCadCoreMC22.0" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Windows.Forms.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

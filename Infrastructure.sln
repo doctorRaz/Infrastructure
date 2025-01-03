@@ -33,10 +33,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageService.NET", "NET\MessageService.NET\MessageService.NET.csproj", "{16652DA4-2C7E-6021-C5BA-F7A44BCB9398}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NET2.0", "NET2.0", "{36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}"
-	ProjectSection(SolutionItems) = preProject
-		src\MesagServise\Msg.cs = src\MesagServise\Msg.cs
-		src\MesagServise\Notificator.cs = src\MesagServise\Notificator.cs
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageService2.0", "NET2.0\MessageService2.0\MessageService2.0.csproj", "{8DFCA3F0-C7ED-4F92-93B4-15F812ED595D}"
 EndProject

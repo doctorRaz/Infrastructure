@@ -15,7 +15,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCopyright("© Разыграев Андрей 2014-2025")]
 [assembly: AssemblyTrademark("©doctorRAZ")]
 [assembly: AssemblyCulture("")]
-[assembly: AssemblyInformationalVersion("FindCmdInfo for nanoCAD")]
+[assembly: AssemblyInformationalVersion("MessageService for CAD")]
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 
 // COM, set the ComVisible attribute to true on that type.

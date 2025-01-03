@@ -5,24 +5,24 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Extensions")]
-[assembly: AssemblyDescription("Вспомогательные классы расширений")]
+[assembly: AssemblyTitle("AsmInfo")]
+[assembly: AssemblyDescription("Информация о сборке")]
 [assembly: AssemblyConfiguration("")]
 // [assembly: AssemblyCompany("")]
 [assembly: AssemblyCompany("doctorRaz@gmail.com")]
-[assembly: AssemblyProduct("Extensions.NF")]
+[assembly: AssemblyProduct("AsmInfo")]
 // [assembly: AssemblyCopyright("Copyright ©  2024")]
 [assembly: AssemblyCopyright("© Разыграев Андрей 2014-2025")]
 [assembly: AssemblyTrademark("©doctorRAZ")]
 [assembly: AssemblyCulture("")]
-[assembly: AssemblyInformationalVersion("Extensions")]
+[assembly: AssemblyInformationalVersion("FindInfo assembly for CAD")]
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 
 // COM, set the ComVisible attribute to true on that type.
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("DAA516EF-7E7A-B944-808F-6A6E4387263A")]
+[assembly: Guid("B438F9F9-2670-C717-77C8-5C8633BFE162")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -25,20 +25,37 @@ namespace drz.Infrastructure.CAD.MessageService
     /// </summary>
     public partial class Msg
     {
+        /// <summary>
+        /// MSGs the error.
+        /// </summary>
+        /// <param name="message">The message.</param>
         public void MsgError(string message)
         {
             MessageBox.Show(message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
+        /// <summary>
+        /// MSGs the information.
+        /// </summary>
+        /// <param name="message">The message.</param>
         public void MsgInfo(string message)
         {
             MessageBox.Show(message, "Инфо", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        /// <summary>
+        /// MSGs the warning.
+        /// </summary>
+        /// <param name="message">The message.</param>
         public void MsgWarning(string message)
         {
             MessageBox.Show(message, "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
+        /// <summary>
+        /// MSGs the console.
+        /// </summary>
+        /// <param name="message">The message.</param>
         public void MsgConsole(string message)
         {
             Document doc = Application.DocumentManager.MdiActiveDocument;

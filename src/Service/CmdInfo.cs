@@ -1,18 +1,15 @@
 ﻿//https://autolisp.ru/2024/10/29/nanocad-vyvod-komand-s-ix-opisaniem-cherez-net/ 
-
-using System.ComponentModel;
+//https://adn-cis.org/programmnoe-opredelenie-dublirovannyix-imen-.net-komand.html
 using System.Reflection;
 using System;
-
-
-
-
+using System.Collections.Generic;
+using System.ComponentModel;
 
 #if NC
 
 using Teigha.Runtime;
-
 #elif AC
+
 using Autodesk.AutoCAD.Runtime;
 
 #endif  
@@ -21,132 +18,201 @@ using Autodesk.AutoCAD.Runtime;
 namespace drz.Infrastructure.CAD.Service
 {
     /// <summary>
-    /// читает из сборки имена и описания команд
+    /// Информация о командах CAD
     /// </summary>
-    public   class CmdInfo
+    public class CmdInfo
     {
+        #region AsmInfo
+
+        
+
+
+
+        #endregion
+
+
+        #region Other
         /// <summary>
-        /// Gets or sets the method attribute.
+        /// Gets or sets the map information.
         /// </summary>
         /// <value>
-        /// The method attribute.
+        /// The map information.
         /// </value>
-        CommandMethodAttribute MethodAttr { get; set; }
+        public Dictionary<string, List<CmdList>> mapInfo { get; set; }
 
         /// <summary>
-        /// Gets or sets the Name attribute.
+        /// Gets or sets the s command information.
         /// </summary>
         /// <value>
-        /// The Name attribute.
+        /// The s command information.
         /// </value>
-        string NameAttr { get; set; }
+        public string sCmdInfo { get; set; } = "";
 
         /// <summary>
-        /// Gets or sets the description attribute.
+        /// Gets or sets the s duplicate information.
         /// </summary>
         /// <value>
-        /// The description attribute.
+        /// The s duplicate information.
         /// </value>
-        /*public*/
-        DescriptionAttribute descriptionAttr { get; set; }
+        public string sDuplInfo { get; set; } = "";
 
-        public  string smes { get; set; }  = "";
+
+
+
+        /// <summary>
+        /// Список зарегистрированных команд
+        /// </summary>
+        public class CmdList
+        {
+            /// <summary>
+            /// Имя метода
+            /// </summary>
+            internal string MethodAttr { get; set; }
+
+            /// <summary>
+            ///Описание метода
+            /// </summary>
+            internal string DescriptionAttr { get; set; }
+
+            /// <summary>
+            /// Имя класса
+            /// </summary>
+            internal string MethodInfo { get; set; }
+
+        }
+
+
+        /// <summary>Сборка содержащая текущий исполняемый код</summary>
+        Assembly asm { get; set; }
+
+        /// <summary>
+        /// Вывод MethodInfo /[b method information].
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if [b method information]; otherwise, <c>false</c>.
+        /// </value>
+        bool bMethodInfo { get; set; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CmdInfo"/> class.
+        /// </summary>
+        public CmdInfo(bool _bMethodInfo = false)
+        {
+            bMethodInfo = _bMethodInfo;
+            asm = Assembly.GetExecutingAssembly();
+            Reflection();
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AsmInfo"/> class.
+        /// </summary>
+        /// <param name="_asm">The asm.</param>
+        /// <param name="_bMethodInfo">if set to <c>true</c> [b method information].</param>
+        public CmdInfo(Assembly _asm, bool _bMethodInfo = false)
+        {
+            bMethodInfo = _bMethodInfo;
+            asm = _asm;
+            Reflection();
+        }
+        #endregion
 
         /// <summary>
         /// Reflections this instance.
-        /// <br>если подключаем как модуль к приложению</br>
         /// </summary>
-        public void Reflection()
+        void Reflection()
+
         {
-            ReflectionEngine(Assembly.GetExecutingAssembly());
-        }
-
-        /// <summary>
-        /// Reflections the specified asm.
-        /// <br>если подключаем как библиотеку</br>
-        /// </summary>
-        /// <param name="_asm">Assembly сборки из которой надо вытащить команды</param>
-        public void Reflection(Assembly asm)
-        {
-            ReflectionEngine(asm);
-        }
-
-        /// <summary>
-        /// Reflections the engine.
-        /// </summary>
-        void ReflectionEngine(Assembly asm)
-        {
+            mapInfo = new Dictionary<string, List<CmdList>>();
 
 
-            Type[] expTyped = asm.GetTypes();
+            Type[] expTypes = asm.GetTypes();
 
-           
-            string smetod = "";
-            foreach (Type t in expTyped)
+            //собираем
+            foreach (Type type in expTypes)
             {
-                MethodInfo[] methods = t.GetMethods();
+                MethodInfo[] methods = type.GetMethods();
+
+                //собираем методы
                 foreach (MethodInfo method in methods)
                 {
-                    CmdInfo temp = GetCmdInfo(method);
-                    if (temp != null)
-                    {
-#if DEBUG
-                        smetod = " [" + temp.NameAttr + "]";
-#endif
+                    CmdList cinf = GetCmdInf(method);
+                    if (cinf == null)
+                        continue;
 
-                        if (temp.descriptionAttr != null)
-                        {
-                            //msgService.ConsoleMessage(temp.MethodAttr.GlobalName + "\t" + sDeb +
-                            //temp.descriptionAttr.Description ?? "");
-                            smes = smes + temp.MethodAttr.GlobalName +
-                                smetod +
-                                "\t" +
-                            temp.descriptionAttr.Description + "\n";
-                        }
-                        else
-                        {
-                            smes = smes + temp.MethodAttr.GlobalName +
-                                smetod +
-                                "\n";
-                            //msgService.ConsoleMessage(temp.MethodAttr.GlobalName);
-                        }
+                    if (!mapInfo.ContainsKey(cinf.MethodAttr))
+                    {
+                        var lCinfo = new List<CmdList>();
+                        mapInfo.Add(cinf.MethodAttr, lCinfo);
+                    }
+                    mapInfo[cinf.MethodAttr].Add(cinf);
+                }
+            }
+            string sMethod;
+
+            foreach (KeyValuePair<string, List<CmdList>> keyValuePair in mapInfo)
+            {
+                if (keyValuePair.Value.Count > 1)
+                {
+                    if (!string.IsNullOrEmpty(sDuplInfo)) sDuplInfo += "\n";//если дописываем, то перенос
+
+                    sDuplInfo += "Дублированный атрибут: " + keyValuePair.Key;
+
+                    foreach (CmdList itemList in keyValuePair.Value)
+                    {
+                        sDuplInfo += "\n\t[" + itemList.MethodInfo + "] " + itemList.DescriptionAttr;
+                    }
+                }
+                else
+                {
+                    if (bMethodInfo)
+                    {
+                        sMethod = " [" + keyValuePair.Value[0].MethodInfo + "]";
+                    }
+
+                    else
+                    {
+                        sMethod = "";
+                    }
+
+                    if (!string.IsNullOrEmpty(sCmdInfo)) sCmdInfo += "\n";//если дописываем, то перенос
+
+                    sCmdInfo += keyValuePair.Key + sMethod + "\t" + keyValuePair.Value[0].DescriptionAttr;
+                }
+            }
+        }
+
+        CmdList GetCmdInf(MethodInfo method)
+        {
+            object[] attributes = method.GetCustomAttributes(true);
+            CmdList res = new CmdList();
+
+
+            foreach (object attribute in attributes)
+            {
+                if (attribute is CommandMethodAttribute cmdAttr)
+                {
+                    res.MethodAttr = cmdAttr.GlobalName;
+
+                    res.MethodInfo = method.Name;
+
+                }
+                else if (attribute is DescriptionAttribute descrAttr)
+                {
+                    if (descrAttr != null)
+                    {
+
+                        res.DescriptionAttr = descrAttr.Description;
+                    }
+                    else
+                    {
+                        res.DescriptionAttr = "";
                     }
                 }
             }
-            smes = smes + "___________________________";
-
-
-        }
-
-        /// <summary>
-        /// Gets the command information.
-        /// </summary>
-        /// <param name="method">The method.</param>
-        /// <returns></returns>
-        /*private*/
-        CmdInfo GetCmdInfo(MethodInfo method)
-        {
-            object[] attrs = method.GetCustomAttributes(true);
-
-            CmdInfo res = new CmdInfo();
-
-            foreach (object attr in attrs)
-            {
-                res.NameAttr = method.Name;
-
-                if (attr is CommandMethodAttribute cmdAttr)
-                {
-                    res.MethodAttr = cmdAttr;
-                }
-                else if (attr is DescriptionAttribute descrAttr)
-                {
-                    res.descriptionAttr = descrAttr;
-                }
-            }
-
+            //return res;
             return res.MethodAttr == null ? null : res;
         }
-    }
 
+    }
 }
 

@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{75B4711A-B866-4416-A1F3-CAFE10FE9352}</ProjectGuid>
+    <ProjectGuid>{FB8417C2-1137-05D0-9A71-812B1CA1E2B6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>drz</RootNamespace>
-    <AssemblyName>Test CMD info NF</AssemblyName>
+    <RootNamespace>drz.Infrastructure</RootNamespace>
+    <AssemblyName>MessageService</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -18,55 +18,59 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\Debug\</OutputPath>
+    <OutputPath>..\..\bin\Debug\</OutputPath>
     <DefineConstants>TRACE;DEBUG;NC</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
     <!--<PlatformTarget>AnyCPU</PlatformTarget>-->
     <TargetName>$(AssemblyName)$(PlatformTarget)</TargetName>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject />
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
-    <OutputPath>..\bin\Release\</OutputPath>
+    <OutputPath>..\..\bin\Release\</OutputPath>
     <DefineConstants>NC</DefineConstants>
     <Optimize>true</Optimize>
     <!--<PlatformTarget>AnyCPU</PlatformTarget>-->
     <TargetName>$(AssemblyName)$(PlatformTarget)</TargetName>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>..\..\bin\Release\MessageService.xml</DocumentationFile>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="hostdbmgd, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\nanoCadCoreMC22.0.1.0.0\lib\net45\hostdbmgd.dll</HintPath>
+      <HintPath>..\..\packages\nanoCadCoreMC22.0.1.0.0\lib\net45\hostdbmgd.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
     </Reference>
     <Reference Include="hostmgd, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\nanoCadCoreMC22.0.1.0.0\lib\net45\hostmgd.dll</HintPath>
+      <HintPath>..\..\packages\nanoCadCoreMC22.0.1.0.0\lib\net45\hostmgd.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
     </Reference>
     <Reference Include="imapimgd, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\nanoCadCoreMC22.0.1.0.0\lib\net45\imapimgd.dll</HintPath>
+      <HintPath>..\..\packages\nanoCadCoreMC22.0.1.0.0\lib\net45\imapimgd.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
     </Reference>
     <Reference Include="mapibasetypes, Version=1.0.8031.27361, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\nanoCadCoreMC22.0.1.0.0\lib\net45\mapibasetypes.dll</HintPath>
+      <HintPath>..\..\packages\nanoCadCoreMC22.0.1.0.0\lib\net45\mapibasetypes.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
     </Reference>
     <Reference Include="mapimgd, Version=1.0.8031.27444, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\nanoCadCoreMC22.0.1.0.0\lib\net45\mapimgd.dll</HintPath>
+      <HintPath>..\..\packages\nanoCadCoreMC22.0.1.0.0\lib\net45\mapimgd.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -75,23 +79,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CadCommand.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="..\..\src\MesagServise\Msg.cs">
+      <Link>Msg.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\MesagServise\Notificator.cs">
+      <Link>Notificator.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\NF\AsmInfo\AsmInfo.csproj">
-      <Project>{b438f9f9-2670-c717-77c8-5c8633bfe162}</Project>
-      <Name>AsmInfo</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NF\MessageService\MessageService.csproj">
-      <Project>{fb8417c2-1137-05d0-9a71-812b1ca1e2b6}</Project>
-      <Name>MessageService</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>

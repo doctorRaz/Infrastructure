@@ -1,8 +1,10 @@
 //! Created by dRz on the WIN-CGR 21.12.2024 21:14:12
 using System.ComponentModel;
 using System.Reflection;
-using drz.Infrastructure.CAD.Service;
+
 using drz.Infrastructure.CAD.MessageService;
+using drz.Infrastructure;
+using drz.Infrastructure.CAD.Service;
 
 
 #if NC
@@ -49,16 +51,31 @@ using Rtm = Autodesk.AutoCAD.Runtime;
 // namespace drz.Test_CMD_INFO
 namespace drz.test
 {
+
+
     /// <summary> 
     /// Команды
     /// </summary>
     internal class CadCommand : Rtm.IExtensionApplication
     {
+
+        Msg msgService;
+
+        internal static CmdInfo CDI;//эта сборка вывод имен классов
+        internal static AsmInfo AI;
         #region INIT
         public void Initialize()
         {
-            //выводим список команд с описаниями и их дубликаты если есть
+            msgService = new Msg();
+            CDI = new CmdInfo(Assembly.GetExecutingAssembly(), true);//эта сборка вывод имен классов
+            AI = new AsmInfo(Assembly.GetExecutingAssembly());
+
+
             ListCMD();
+
+            //выводим список команд с описаниями и их дубликаты если есть
+
+            //Class1.  ListCMD();
         }
 
         public void Terminate()
@@ -70,7 +87,40 @@ namespace drz.test
 
         #region Command
 
-        Msg msgService = new Msg();
+        /// <summary>
+        /// Lists the command.
+        /// </summary>
+        [Rtm.CommandMethod("t1drz_info", Rtm.CommandFlags.Session)]
+        [Description("Информация о командах сборки" /*+ nameof(test_cmd)*/)]
+        public void ListCMD()
+        {
+            //выводим список команд с описаниями
+            //CmdDuplInfo CDI = new CmdDuplInfo(Assembly.GetExecutingAssembly(), bMethod);
+
+            //System.Collections.Generic.Dictionary<string, System.Collections.Generic.List<CmdDuplInfo.CmdList>> cdi = CadCommand.CDI.mapInfo;
+            string sTitleAttribute = AI.sTitleAttribute;
+            string sVersion = AsmInfo.sVersion;
+
+            Msg msgService = new Msg();
+            msgService.MsgConsole(sTitleAttribute + " " + sVersion);
+
+            if (!string.IsNullOrEmpty(CadCommand.CDI.sCmdInfo))
+            {
+                msgService.MsgConsole(CadCommand.CDI.sCmdInfo);
+            }
+            else
+            {
+                msgService.MsgConsole("Нет зарегистрированных команд");
+            }
+
+            if (!string.IsNullOrEmpty(CadCommand.CDI.sDuplInfo))
+            {
+                //msgService.MsgConsole("_____________________");
+                msgService.MsgConsole(CadCommand.CDI.sDuplInfo);
+                //msgService.MsgConsole("_____________________");
+
+            }
+        }
 
         /// <summary>
         /// Tests the command.
@@ -79,14 +129,15 @@ namespace drz.test
         [Description("Test 1 : Получение списка команд с описаниями" /*+ nameof(test_cmd)*/)]
         public void test_cmd()
         {
-            ListCMD(true);
+            ListCMD();
+            var tt = CDI;
         }
 
         [Rtm.CommandMethod("t1drz_false", Rtm.CommandFlags.Session)]
         [Description("Test 1 : Получение списка команд с описаниями" /*+ nameof(test_cmd)*/)]
         public void test_cmd1()
         {
-            ListCMD(false);
+            ListCMD();
         }
 
         [Rtm.CommandMethod("t1drz_default", Rtm.CommandFlags.Session)]
@@ -145,34 +196,6 @@ namespace drz.test
         #endregion
 
 
-        /// <summary>
-        /// Lists the command.
-        /// </summary>
-        void ListCMD(bool bMethod = false)
-        {
-            //выводим список команд с описаниями
-            CmdDuplInfo CDI = new CmdDuplInfo(Assembly.GetExecutingAssembly(), bMethod);
 
-            System.Collections.Generic.Dictionary<string, System.Collections.Generic.List<CmdDuplInfo.CmdList>> lll = CDI.mapInfo;
-
-
-            Msg msgService = new Msg();
-            if (!string.IsNullOrEmpty(CDI.sCmdInfo))
-            {
-                msgService.MsgConsole(CDI.sCmdInfo);
-            }
-            else
-            {
-                msgService.MsgConsole("Нет зарегистрированных команд");
-            }
-
-            if (!string.IsNullOrEmpty(CDI.sDuplInfo))
-            {
-                //msgService.MsgConsole("_____________________");
-                msgService.MsgConsole(CDI.sDuplInfo);
-                //msgService.MsgConsole("_____________________");
-
-            }
-        }
     }
 }

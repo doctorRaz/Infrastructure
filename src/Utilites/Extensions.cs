@@ -1,6 +1,7 @@
 ﻿
 
 using System;
+using System.Linq;
 using System.Text.RegularExpressions;
 using System.Xml;
 using System.Xml.Linq;
@@ -91,6 +92,20 @@ namespace drz.Infrastructure.Utility.Extensions
             }
             return xmlDocument;
         }
+
+
+        /// <summary>
+        /// Проверка булевых на равенство
+        /// https://stackoverflow.com/a/11267664
+        /// </summary>
+        /// <param name="firstValue"></param>
+        /// <param name="bools"></param>
+        /// <returns></returns>
+        public static bool AllEqual(this bool firstValue, params bool[] bools)
+        {
+            return bools.All(thisBool => thisBool == firstValue);
+        }
+
 
     }
 }

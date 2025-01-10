@@ -33,7 +33,12 @@ EULA:
  
 ==============================================================================================================*/
 using System;
+using System.Reflection;
 using System.Runtime.InteropServices;
+
+#if NET
+[assembly: AssemblyInformationalVersion("ClsINI for All")]
+#endif
 
 namespace drz.Infrastructure.Utility
 {

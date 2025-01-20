@@ -1,4 +1,4 @@
-﻿//https://autolisp.ru/2024/10/29/nanocad-vyvod-komand-s-ix-opisaniem-cherez-net/ 
+﻿//https://autolisp.ru/2024/10/29/nanocad-vyvod-komand-s-ix-opisaniem-cherez-net/
 //https://adn-cis.org/programmnoe-opredelenie-dublirovannyix-imen-.net-komand.html
 using System.Reflection;
 using System;
@@ -8,12 +8,12 @@ using System.ComponentModel;
 #if NC
 
 using Teigha.Runtime;
+
 #elif AC
 
 using Autodesk.AutoCAD.Runtime;
 
-#endif  
-
+#endif
 
 namespace drz.Infrastructure.CAD.Service
 {
@@ -22,16 +22,8 @@ namespace drz.Infrastructure.CAD.Service
     /// </summary>
     public class CmdInfo
     {
-        #region AsmInfo
-
-        
-
-
-
-        #endregion
-
-
         #region Other
+
         /// <summary>
         /// Gets or sets the map information.
         /// </summary>
@@ -56,9 +48,6 @@ namespace drz.Infrastructure.CAD.Service
         /// </value>
         public string sDuplInfo { get; set; } = "";
 
-
-
-
         /// <summary>
         /// Список зарегистрированных команд
         /// </summary>
@@ -78,12 +67,10 @@ namespace drz.Infrastructure.CAD.Service
             /// Имя класса
             /// </summary>
             internal string MethodInfo { get; set; }
-
         }
 
-
         /// <summary>Сборка содержащая текущий исполняемый код</summary>
-        Assembly asm { get; set; }
+        private Assembly asm { get; set; }
 
         /// <summary>
         /// Вывод MethodInfo /[b method information].
@@ -91,7 +78,7 @@ namespace drz.Infrastructure.CAD.Service
         /// <value>
         ///   <c>true</c> if [b method information]; otherwise, <c>false</c>.
         /// </value>
-        bool bMethodInfo { get; set; }
+        private bool bMethodInfo { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CmdInfo"/> class.
@@ -114,16 +101,16 @@ namespace drz.Infrastructure.CAD.Service
             asm = _asm;
             Reflection();
         }
-        #endregion
+
+        #endregion Other
 
         /// <summary>
         /// Reflections this instance.
         /// </summary>
-        void Reflection()
+        private void Reflection()
 
         {
             mapInfo = new Dictionary<string, List<CmdList>>();
-
 
             Type[] expTypes = asm.GetTypes();
 
@@ -168,7 +155,6 @@ namespace drz.Infrastructure.CAD.Service
                     {
                         sMethod = " [" + keyValuePair.Value[0].MethodInfo + "]";
                     }
-
                     else
                     {
                         sMethod = "";
@@ -181,11 +167,10 @@ namespace drz.Infrastructure.CAD.Service
             }
         }
 
-        CmdList GetCmdInf(MethodInfo method)
+        private CmdList GetCmdInf(MethodInfo method)
         {
             object[] attributes = method.GetCustomAttributes(true);
             CmdList res = new CmdList();
-
 
             foreach (object attribute in attributes)
             {
@@ -194,13 +179,11 @@ namespace drz.Infrastructure.CAD.Service
                     res.MethodAttr = cmdAttr.GlobalName;
 
                     res.MethodInfo = method.Name;
-
                 }
                 else if (attribute is DescriptionAttribute descrAttr)
                 {
                     if (descrAttr != null)
                     {
-
                         res.DescriptionAttr = descrAttr.Description;
                     }
                     else
@@ -212,7 +195,5 @@ namespace drz.Infrastructure.CAD.Service
             //return res;
             return res.MethodAttr == null ? null : res;
         }
-
     }
 }
-

@@ -1,11 +1,7 @@
-﻿using System.Reflection;
-using System.Windows.Forms;
-
-
-
-
+﻿using System.Windows.Forms;
 
 #if NC
+
 using HostMgd.ApplicationServices;
 using HostMgd.EditorInput;
 
@@ -18,7 +14,7 @@ using Autodesk.AutoCAD.EditorInput;
 
 #endif
 
-#if NET
+#if MSG && NET
 [assembly: AssemblyInformationalVersion("MesagServise for CAD")]
 #endif
 
@@ -67,9 +63,11 @@ namespace drz.Infrastructure.CAD.MessageService
             {
                 MsgInfo(message);
             }
-
-            Editor ed = doc.Editor;
-            ed.WriteMessage("\n" + message);
+            else
+            {
+                Editor ed = doc.Editor;
+                ed.WriteMessage("\n" + message);
+            }
         }
     }
 }

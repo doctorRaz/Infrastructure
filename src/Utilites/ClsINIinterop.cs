@@ -1,6 +1,5 @@
-
 /*==============================================================================================================
-INI Class 
+INI Class
 ---------
 Author:
 				Adam Woods - http://www.aejw.com/
@@ -15,12 +14,12 @@ Source:
 EULA:
 				You disturbe and use this code / class in any envoriment you see fit.
 				The header (this information) can not be modified or removed.
-				LIMIT OF LIABILITY: IN NO EVENT WILL Adam Woods BE LIABLE TO YOU FOR ANY LOSS OF USE, 
-				INTERRUPTION OF BUSINESS, OR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL 
-				DAMAGES OF ANY KIND (INCLUDING LOST PROFITS) REGARDLESS OF THE FORM OF ACTION WHETHER IN 
-				CONTRACT, TORT (INCLUDING NEGLIGENCE), STRICT PRODUCT LIABILITY OR OTHERWISE, EVEN 
+				LIMIT OF LIABILITY: IN NO EVENT WILL Adam Woods BE LIABLE TO YOU FOR ANY LOSS OF USE,
+				INTERRUPTION OF BUSINESS, OR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL
+				DAMAGES OF ANY KIND (INCLUDING LOST PROFITS) REGARDLESS OF THE FORM OF ACTION WHETHER IN
+				CONTRACT, TORT (INCLUDING NEGLIGENCE), STRICT PRODUCT LIABILITY OR OTHERWISE, EVEN
 				IF Adam Woods HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.EULA:
-				
+
 ЛИЦЕНЗИОННОЕ СОГЛАШЕНИЕ:
                 Вы можете использовать этот код / класс в любой среде, которую сочтете нужным.
                 Заголовок (эта информация) не может быть изменен или удален.
@@ -28,15 +27,15 @@ EULA:
                 ВАМИ ЗА ЛЮБУЮ ПОТЕРЮ ИСПОЛЬЗОВАНИЯ,
                 ПРЕРЫВАНИЕ БИЗНЕСА ИЛИ ЛЮБОЕ ПРЯМОЕ, КОСВЕННОЕ, СПЕЦИАЛЬНОЕ, СЛУЧАЙНОЕ ИЛИ ВЫТЕКАЮЩЕЕ
                 УБЫТКИ ЛЮБОГО РОДА (ВКЛЮЧАЯ УПУЩЕННУЮ ВЫГОДУ) НЕЗАВИСИМО ОТ ФОРМЫ ИСКА, БУДЬ ТО В
-                КОНТРАКТА, ДЕЛИКТА (ВКЛЮЧАЯ ХАЛАТНОСТЬ), СТРОГОЙ ОТВЕТСТВЕННОСТИ ЗА ПРОДУКТ ИЛИ ИНЫМ 
+                КОНТРАКТА, ДЕЛИКТА (ВКЛЮЧАЯ ХАЛАТНОСТЬ), СТРОГОЙ ОТВЕТСТВЕННОСТИ ЗА ПРОДУКТ ИЛИ ИНЫМ
                 ОБРАЗОМ, ДАЖЕ ЕСЛИ Адам Вудс БЫЛ ПРЕДУПРЕЖДЕН О ВОЗМОЖНОСТИ ТАКОГО УЩЕРБА.
- 
+
 ==============================================================================================================*/
+
 using System;
-using System.Reflection;
 using System.Runtime.InteropServices;
 
-#if NET
+#if CLSINI && NET
 [assembly: AssemblyInformationalVersion("ClsINI for All")]
 #endif
 
@@ -48,8 +47,11 @@ namespace drz.Infrastructure.Utility
     public class ClsIni
     {
         [DllImport("kernel32", SetLastError = true)] private static extern int WritePrivateProfileString(string pSection, string pKey, string pValue, string pFile);
+
         [DllImport("kernel32", SetLastError = true)] private static extern int WritePrivateProfileStruct(string pSection, string pKey, string pValue, int pValueLen, string pFile);
+
         [DllImport("kernel32", SetLastError = true)] private static extern int GetPrivateProfileString(string pSection, string pKey, string pDefault, byte[] prReturn, int pBufferLen, string pFile);
+
         [DllImport("kernel32", SetLastError = true)] private static extern int GetPrivateProfileStruct(string pSection, string pKey, byte[] prReturn, int pBufferLen, string pFile);
 
         private string ls_IniFilename;
@@ -152,7 +154,6 @@ namespace drz.Infrastructure.Utility
             return iVal;
         }
 
-
         /// <summary>Чтение значения из INI File, default = "" </summary>
         /// <param name="pSection">Раздел</param>
         /// <param name="pKey">Ключ</param>
@@ -163,7 +164,7 @@ namespace drz.Infrastructure.Utility
             return (z_GetString(pSection, pKey, ""));
         }
 
-        /// <summary>Запись значения в INI File</summary> 
+        /// <summary>Запись значения в INI File</summary>
         /// <param name="pSection">Раздел</param>
         /// <param name="pKey">Ключ</param>
         /// <param name="pValue">Значение</param>
@@ -209,7 +210,6 @@ namespace drz.Infrastructure.Utility
             //получить все ключи из ReadKeys
             //потом в цикле по ключам получить все значения
             //вернуть массивом ref
-
         }
 
         /// <summary> Считывание разделов из INI File</summary>
@@ -228,8 +228,6 @@ namespace drz.Infrastructure.Utility
             }
             //pSections = z_GetString(null, null, null).Split((char)0);// by razygraevaa on 07.02.2022 at 12:44
         }
-
-
 
         /// <summary>Удалить раздел из INI File</summary>
         /// <param name="pSection">Раздел</param>

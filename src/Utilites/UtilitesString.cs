@@ -1,10 +1,4 @@
-﻿
-
-using System;
-using System.Text.RegularExpressions;
-using System.Xml;
-using System.Xml.Linq;
-
+﻿using System.Text.RegularExpressions;
 
 namespace drz.Infrastructure.Utility.String
 {
@@ -99,5 +93,4 @@ namespace drz.Infrastructure.Utility.String
             }
         }
     }
-
 }

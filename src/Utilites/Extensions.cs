@@ -1,11 +1,8 @@
-﻿
-
-using System;
+﻿using System;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Xml;
 using System.Xml.Linq;
-
 
 namespace drz.Infrastructure.Utility.Extensions
 {
@@ -60,7 +57,6 @@ namespace drz.Infrastructure.Utility.Extensions
             return 0;
         }
 
-
         /// <summary>
         /// конвертация XmlDocument в XDocument
         /// https://stackoverflow.com/questions/1508572/converting-xdocument-to-xmldocument-and-vice-versa
@@ -93,7 +89,6 @@ namespace drz.Infrastructure.Utility.Extensions
             return xmlDocument;
         }
 
-
         /// <summary>
         /// Проверка булевых на равенство
         /// https://stackoverflow.com/a/11267664
@@ -105,7 +100,5 @@ namespace drz.Infrastructure.Utility.Extensions
         {
             return bools.All(thisBool => thisBool == firstValue);
         }
-
-
     }
 }

@@ -1,11 +1,7 @@
-﻿
+﻿using System;
+using System.Diagnostics;
 
 using Multicad.AplicationServices;
-
-using System;
-using System.Diagnostics;
-using System.Windows;
-
 
 namespace drz.Infrastructure.CAD.MessageService
 {
@@ -44,7 +40,6 @@ namespace drz.Infrastructure.CAD.MessageService
                                         UIntPtr.Zero,
                                         link,
                                         link);
-
         }
 
         /// <summary> Открывает страницу по гиперссылке </summary>
@@ -63,7 +58,7 @@ namespace drz.Infrastructure.CAD.MessageService
             {
                 string serr = ex.Message;
                 serr += "\n";
-                serr = ex.StackTrace;
+                serr = ex?.StackTrace ?? string.Empty ;
                 serr += "\n";
 
                 _ = System.Windows.Forms.MessageBox.Show(serr + "Неправильный URL");
@@ -91,9 +86,7 @@ namespace drz.Infrastructure.CAD.MessageService
 
             string sURL = @"https://forum.nanocad.ru/index.php?/discover/unread/&stream_date_type=relative&before";
 
-
             NotifaiMessag noti = new NotifaiMessag(sTextMsg, sTextURL, nfe, sURL);
-
         }
     }
 }

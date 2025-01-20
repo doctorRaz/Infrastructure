@@ -9,26 +9,23 @@ using System.Reflection;
 namespace drz.Infrastructure.CAD.Service
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public partial class AsmInfo
     {
-
         #region Служебные
+
         /// <summary>Домен машины</summary>
-        internal string Userdomain = System.Environment.GetEnvironmentVariable("USERDOMAIN");
+        public string userdomain => Environment.GetEnvironmentVariable("USERDOMAIN") ?? string.Empty;
 
-
-        #endregion
-
+        #endregion Служебные
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AsmInfo"/> class.
         /// </summary>
         public AsmInfo()
         {
-            asm = Assembly.GetExecutingAssembly();// (spath);
-            Reflector();
+            asm = Assembly.GetExecutingAssembly();
         }
 
         /// <summary>
@@ -37,32 +34,15 @@ namespace drz.Infrastructure.CAD.Service
         /// <param name="_asm">The asm.</param>
         public AsmInfo(Assembly _asm)
         {
-            asm = _asm;// (spath);
-            Reflector();
+            asm = _asm;
         }
 
-        void Reflector()
-        {
-            var title = (Attribute.GetCustomAttribute(
-            asm,
-            typeof(AssemblyTitleAttribute),
-            false) as AssemblyTitleAttribute);
-            if (title is null)
-            {
-                _sTitleAttribute = "";
-            }
-            else
-            {
-                _sTitleAttribute = title.Title;
-
-            }
-        }
-        static Assembly asm { get; set; }
-
+        private Assembly asm { get; set; }
 
         #region ВЕРСИЯ ПРОГРАММЫ
+
         /// <summary>Версия программы</summary>
-        public System.Version sysVersion => asm.GetName().Version;
+        public System.Version sysVersion => asm.GetName()?.Version ?? new Version();
 
         /// <summary>Версия мажор</summary>
         public int iMajor => sysVersion.Major;
@@ -78,68 +58,70 @@ namespace drz.Infrastructure.CAD.Service
 
         /// <summary>Бета или нет, чет нечет</summary>
         //static string _sBeta => iMinor == 0 || iMinor >3 ? "" : iMinor == 1 ? "<alfa>" : "<beta>";
-        private static string _sBeta = "";//=> iMinor == 0 || iMinor == 1 ? "<alfa>" : iMinor > 1 && iMinor < 5 ? "<beta>" : "";
-        #endregion
+        private string _sBeta => iMinor < 2 ? "<alfa>" : iMinor < 4 ? "<beta>" : "";
+
+        #endregion ВЕРСИЯ ПРОГРАММЫ
 
         #region Assembly
 
-
-        string _sTitleAttribute;
         /// <summary> Титул программы</summary>
-        public string sTitleAttribute => _sTitleAttribute;
+        public string sTitleAttribute => (Attribute.GetCustomAttribute(
+            asm,
+            typeof(AssemblyTitleAttribute),
+            false) as AssemblyTitleAttribute)?.Title ?? string.Empty;
 
         /// <summary>Описание программы </summary>
         public string sDescription => (Attribute.GetCustomAttribute(
             asm,
             typeof(AssemblyDescriptionAttribute),
-            false) as AssemblyDescriptionAttribute).Description;//!описание
+            false) as AssemblyDescriptionAttribute)?.Description ?? string.Empty;//!описание
 
         /// <summary>Конфигурация программы </summary>
         public string sConfiguration => (Attribute.GetCustomAttribute(
             asm,
             typeof(AssemblyConfigurationAttribute),
-            false) as AssemblyConfigurationAttribute).Configuration;
+            false) as AssemblyConfigurationAttribute)?.Configuration ?? string.Empty;
 
         /// <summary>Компания </summary>
         public string sCompany => (Attribute.GetCustomAttribute(
             asm,
             typeof(AssemblyCompanyAttribute),
-            false) as AssemblyCompanyAttribute).Company;
+            false) as AssemblyCompanyAttribute)?.Company ?? string.Empty;
 
         /// <summary>Продукт </summary>
         public string sProduct => (Attribute.GetCustomAttribute(
             asm,
             typeof(AssemblyProductAttribute),
-            false) as AssemblyProductAttribute).Product;
+            false) as AssemblyProductAttribute)?.Product ?? string.Empty;
 
         /// <summary>копирайт</summary>
         public string sCopyright => (Attribute.GetCustomAttribute(
             asm,
             typeof(AssemblyCopyrightAttribute),
-            false) as AssemblyCopyrightAttribute).Copyright;
+            false) as AssemblyCopyrightAttribute)?.Copyright ?? string.Empty;
 
         /// <summary>торговая марка</summary>
         public string sTrademark => (Attribute.GetCustomAttribute(
             asm,
             typeof(AssemblyTrademarkAttribute),
-            false) as AssemblyTrademarkAttribute).Trademark;
+            false) as AssemblyTrademarkAttribute)?.Trademark ?? string.Empty;
 
         /// <summary>ProductVersion - Версия программы
         /// <br>для идентификации в лицензии пограмма для нк или АК</br>
         /// </summary>
-        public string sInformationalVersionAttribut => (Attribute.GetCustomAttribute(
+        public string sInformationalVersionAttribute => (Attribute.GetCustomAttribute(
                    asm,
                    typeof(AssemblyInformationalVersionAttribute),
-                   false) as AssemblyInformationalVersionAttribute).InformationalVersion;
+                   false) as AssemblyInformationalVersionAttribute)?.InformationalVersion ?? string.Empty;
 
         /// <summary>Полный путь к сборке </summary>
-        public string sAsmFulPath => asm.Location;
+        public string sAsmFullPath => asm.Location;
 
         /// <summary>Имя сборки без расширения</summary>
-        public string sAsmFileNameWithoutExtension => Path.GetFileNameWithoutExtension(sAsmFulPath);
+        public string sAsmFileNameWithoutExtension => Path.GetFileNameWithoutExtension(sAsmFullPath);
 
         /// <summary>Имя сборки с расширением</summary>
-        public string sAsmFileName => Path.GetFileName(sAsmFulPath);
+        public string sAsmFileName => Path.GetFileName(sAsmFullPath);
 
         /// <summary>версия программы </summary>
         public string sVersionBeta => iMajor.ToString()
@@ -149,6 +131,7 @@ namespace drz.Infrastructure.CAD.Service
                                          + iBuild.ToString()
                                          + _sBeta//_sysVersion.ToString() + _sBeta;
                                          ;
+
         /// <summary>Полная версия с окончанием </summary>
         public string sVersionFullBeta => iMajor.ToString()
                                              + "."
@@ -177,36 +160,33 @@ namespace drz.Infrastructure.CAD.Service
                                              + iRevision.ToString();
 
         /// <summary>Дата сборки</summary>
-        public string sDateRelis()
+        public string sDateRelies
         {
-            DateTime result = new DateTime(2000, 1, 1);
-            result = result.AddDays(iBuild);
-            result = result.AddSeconds(iRevision * 2);
+            get
+            {
+                //DateTime result = new DateTime(2000, 1, 1);
+                DateTime result = new DateTime(2000, 1, 1).AddDays(iBuild).AddSeconds(iRevision * 2);
+                //result = result.AddDays(iBuild);
+                //result = result.AddSeconds(iRevision * 2);
 
 #if DEBUG
-            return result.ToString();
+                return result.ToString();
 #else
-            return result.ToLongDateString();
+                return result.ToLongDateString();
 #endif
-
-
-
+            }
         }
 
+        #endregion Assembly
 
-        #endregion
-
-
-
-
-        #region  ПУТИ
+        #region ПУТИ
 
         /// <summary>Путь к Program DATA</summary>
-        private string _sProgramData => Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
+        public string sProgramData => Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
 
-        /// <summary>Общий путь к пользовательским настройкам 
+        /// <summary>Общий путь к пользовательским настройкам
         /// <br>c:\Users\User\AppData\Roaming\ </br></summary>
-        private string _sUserAppData => Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+        public string sUserAppData => Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 
         /// <summary>Путь к рабочему столу</summary>
         public string sUserDesktop => Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
@@ -214,10 +194,6 @@ namespace drz.Infrastructure.CAD.Service
         /// <summary>Имя машины</summary>
         public string sMachineName => Environment.MachineName;
 
-               
-
-        #endregion
-
-
+        #endregion ПУТИ
     }
 }

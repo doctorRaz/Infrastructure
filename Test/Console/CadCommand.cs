@@ -99,7 +99,7 @@ namespace drz.test
 
             //System.Collections.Generic.Dictionary<string, System.Collections.Generic.List<CmdDuplInfo.CmdList>> cdi = CadCommand.CDI.mapInfo;
             string sTitleAttribute = AI.sTitleAttribute;
-            string sVersion = AI.sDateRelis();
+            string sVersion = AI.sDateRelies;
 
             Msg msgService = new Msg();
             msgService.MsgConsole(sTitleAttribute + " " + sVersion);

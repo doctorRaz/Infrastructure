@@ -33,9 +33,10 @@ EULA:
 ==============================================================================================================*/
 
 using System;
+using System.Reflection;
 using System.Runtime.InteropServices;
 
-#if CLSINI && NET
+#if NET
 [assembly: AssemblyInformationalVersion("ClsINI for All")]
 #endif
 

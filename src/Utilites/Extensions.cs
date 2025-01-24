@@ -1,8 +1,14 @@
 ﻿using System;
 using System.Linq;
+using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Xml;
 using System.Xml.Linq;
+
+
+#if NET
+[assembly: AssemblyInformationalVersion("Extensions for All")]
+#endif
 
 namespace drz.Infrastructure.Utility.Extensions
 {

@@ -1,4 +1,10 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Reflection;
+using System.Text.RegularExpressions;
+
+
+#if NET
+[assembly: AssemblyInformationalVersion("Utilites String")]
+#endif
 
 namespace drz.Infrastructure.Utility.String
 {

@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Reflection;
+using System.Windows.Forms;
 
 #if NC
 
@@ -14,7 +15,7 @@ using Autodesk.AutoCAD.EditorInput;
 
 #endif
 
-#if MSG && NET
+#if NET
 [assembly: AssemblyInformationalVersion("MesagServise for CAD")]
 #endif
 

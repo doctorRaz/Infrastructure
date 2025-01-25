@@ -17,7 +17,7 @@
 		<Description>Вспомогательные классы для CAD</Description>
 		<Copyright>Разыграев Андрей</Copyright>
 		<Trademark>©doctorRAZ 2014-2024</Trademark>
-		<AssemblyName>Console.NET</AssemblyName>
+		<AssemblyName></AssemblyName>
 		<!--атрибуты сборки-->
 		
 		<!--<Version />-->
@@ -29,9 +29,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\NF\AsmInfo\AsmInfo.csproj">
-      <Private>True</Private>
-    </ProjectReference>
     <ProjectReference Include="..\..\NF\MessageService\MessageService.csproj" />
   </ItemGroup>
 

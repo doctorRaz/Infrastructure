@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilitesString", "NF\Utilit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsmInfo", "NF\AsmInfo\AsmInfo.csproj", "{B438F9F9-2670-C717-77C8-5C8633BFE162}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleNET", "test\ConsoleNET\ConsoleNET.csproj", "{DF71A340-D969-4EA2-AC0F-2DDC31F07EFC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Err INIT.NET", "test\ConsoleNET\Err INIT.NET.csproj", "{DF71A340-D969-4EA2-AC0F-2DDC31F07EFC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure.NET", "NET\Infrastructure.NET\Infrastructure.NET.csproj", "{63054496-F5E4-9E3D-3064-6187CDB880FE}"
 EndProject

@@ -69,7 +69,7 @@ namespace drz.Infrastructure.CAD.MessageService
     /// <summary>
     /// вызов наносообщений examples
     /// </summary>
-    public class notyCMD
+    public class NotyCMD
     {
         /// <summary>
         /// Пример вызова нотифай со ссылкой

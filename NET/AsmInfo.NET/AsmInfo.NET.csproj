@@ -48,7 +48,10 @@
 		</Compile>
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="nanoCadCoreMC24.1.NET" Version="1.0.0" />
+	  <Reference Include="hostdbmgd">
+	    <HintPath>..\..\..\..\..\SDK\NC23.1\include-x64\hostdbmgd.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
 	</ItemGroup>
 	<!--<ItemGroup>
 		<Folder Include="MesagServise\" />

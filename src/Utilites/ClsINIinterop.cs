@@ -205,8 +205,11 @@ namespace drz.Infrastructure.Utility
         /// <summary>Читает значения в секции (не сделано)</summary>
         /// <param name="pSection">Секция</param>
         /// <param name="pValues">Значения</param>
-        public void ReadValues(string pSection, ref Array pValues)//think  написать метод ReadValues
+        public void ReadValues(string pSection, ref Array pValues)
         {
+            //think  написать метод ReadValues
+            
+            throw new NotImplementedException("Делается");
             //upd написать метод ReadValues
             //получить все ключи из ReadKeys
             //потом в цикле по ключам получить все значения

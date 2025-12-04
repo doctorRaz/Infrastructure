@@ -46,7 +46,22 @@
   <ItemGroup>
     <Reference Include="hostdbmgd, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
       <HintPath>..\..\packages\nanoCadCoreMC22.0.1.0.0\lib\net45\hostdbmgd.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="hostmgd, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\..\packages\nanoCadCoreMC22.0.1.0.0\lib\net45\hostmgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="imapimgd, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\..\packages\nanoCadCoreMC22.0.1.0.0\lib\net45\imapimgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="mapibasetypes, Version=1.0.8031.27361, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\..\packages\nanoCadCoreMC22.0.1.0.0\lib\net45\mapibasetypes.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="mapimgd, Version=1.0.8031.27444, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\..\packages\nanoCadCoreMC22.0.1.0.0\lib\net45\mapimgd.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -60,7 +75,9 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>

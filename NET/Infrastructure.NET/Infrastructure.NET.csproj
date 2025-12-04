@@ -67,9 +67,10 @@
     </Compile>
   </ItemGroup>
 <ItemGroup>
-  <PackageReference Include="nanoCadCoreMC24.1.NET" Version="1.0.0" />
+  <Folder Include="MesagServise\" />
 </ItemGroup>
 <ItemGroup>
-  <Folder Include="MesagServise\" />
+  <PackageReference Include="MultiCAD.NET" Version="23.1.6324.4405" />
+  <PackageReference Include="nanoCAD.Platform.NET" Version="23.1.6324.4405" />
 </ItemGroup>
 </Project>

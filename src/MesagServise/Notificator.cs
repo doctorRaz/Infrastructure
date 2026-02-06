@@ -1,4 +1,8 @@
-﻿using System;
+﻿//тестовый класс, прикрылдо выяснения из за using Multicad.AplicationServices;
+
+#if TEST 
+
+using System;
 using System.Diagnostics;
 
 using Multicad.AplicationServices;
@@ -90,3 +94,4 @@ namespace drz.Infrastructure.CAD.MessageService
         }
     }
 }
+#endif

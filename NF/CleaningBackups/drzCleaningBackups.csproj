@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net462</TargetFramework>
+		<PlatformTarget>x64</PlatformTarget>
+		<RootNamespace>dRz.Cleaner</RootNamespace>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>disable</ImplicitUsings>
+		<CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+		<!--************* только при сборке из решения ******************-->
+		<LangVersion>latest</LangVersion>
+		<!--<DateTime -->
+		<StartYear>2014</StartYear>
+		<CurrentYear>$([System.DateTime]::Now.Year)</CurrentYear>
+		<!--<Version />-->
+		<GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+		<Deterministic>false</Deterministic>
+		<AssemblyVersion>0.1.*</AssemblyVersion>
+		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+		<!--<Version />-->
+		<!-- ***********путь сборки -->
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<BaseOutputPath>..\..\bin\</BaseOutputPath>
+		<!-- ***************** Постоянные свойства ***************** -->
+		<!-- CompanyName -->
+		<Company>doctorRaz@gmail.com</Company>
+		<!-- LegalCopyright -->
+		<Copyright>Разыграев Андрей</Copyright>
+		<!-- LegalTrademarks -->
+		<Trademark>©doctorRaz $(StartYear)-$(CurrentYear)</Trademark>
+		<!-- ***************** Переопределяются в проекте ***************** -->
+		<!-- ProductName -->
+		<Product>drzClean</Product>
+		<!-- FileDescription он жэж Title-->
+		<!-- если все закоментить то в титул пойдет имя сборки -->
+		<AssemblyTitle>drzClean</AssemblyTitle>
+		<!-- Comments -->
+		<Description>Очистка bak и копий файлов</Description>
+		<!-- ProductVersion он жэж AssemblyInformationalVersion-->
+		<InformationalVersion>drzClean</InformationalVersion>
+		<IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+		<NeutralLanguage>ru-RU</NeutralLanguage>
+		<RepositoryUrl>https://github.com/doctorRaz/Infrastructure</RepositoryUrl>
+		<OutputType>Library</OutputType>
+	</PropertyGroup>
+	<ItemGroup>
+		<Compile Remove="_draft\**" />
+		<EmbeddedResource Remove="_draft\**" />
+		<None Remove="_draft\**" />
+	</ItemGroup>
+</Project>

@@ -15,7 +15,7 @@ using Autodesk.AutoCAD.Runtime;
 
 #endif
 
-namespace drz.Infrastructure.CAD.Service
+namespace dRz.Infrastructure.CAD.Service
 {
     /// <summary>
     /// Информация о командах CAD

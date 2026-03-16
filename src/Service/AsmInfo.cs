@@ -6,7 +6,7 @@ using System.Reflection;
 [assembly: AssemblyInformationalVersion("AsmInfo for CAD")]
 #endif
 
-namespace drz.Infrastructure.CAD.Service
+namespace dRz.Infrastructure.CAD.Service
 {
     /// <summary>
     ///

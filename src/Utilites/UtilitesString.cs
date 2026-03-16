@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 [assembly: AssemblyInformationalVersion("Utilites String")]
 #endif
 
-namespace drz.Infrastructure.Utility.String
+namespace dRz.Infrastructure.Utility.String
 {
     /// <summary>Утилиты и подпрограммы для работы со строками
     /// </summary>

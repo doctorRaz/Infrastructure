@@ -40,7 +40,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyInformationalVersion("ClsINI for All")]
 #endif
 
-namespace dRz.Infrastructure.Utility
+namespace drz.Infrastructure.Utility
 {
     /// <summary>
     /// Чтение и запись в файлы ИНИ

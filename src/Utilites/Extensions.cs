@@ -10,7 +10,7 @@ using System.Xml.Linq;
 [assembly: AssemblyInformationalVersion("Extensions for All")]
 #endif
 
-namespace dRz.Infrastructure.Utility.Extensions
+namespace drz.Infrastructure.Utility.Extensions
 {
     /// <summary>
     /// Расширения

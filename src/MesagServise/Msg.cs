@@ -19,7 +19,7 @@ using Autodesk.AutoCAD.EditorInput;
 [assembly: AssemblyInformationalVersion("MesagServise for CAD")]
 #endif
 
-namespace dRz.Infrastructure.CAD.MessageService
+namespace drz.Infrastructure.CAD.MessageService
 {
     /// <summary>
     /// сервис сообщений

@@ -1,16 +1,9 @@
 ﻿using System;
 using System.Linq;
-using System.Reflection;
-using System.Text.RegularExpressions;
 using System.Xml;
 using System.Xml.Linq;
 
-
-#if NET
-[assembly: AssemblyInformationalVersion("Extensions for All")]
-#endif
-
-namespace drz.Infrastructure.Utility.Extensions
+namespace dRz.Infrastructure.Utility.Extensions
 {
     /// <summary>
     /// Расширения
@@ -37,28 +30,52 @@ namespace drz.Infrastructure.Utility.Extensions
             }
 
             if (version.Major != otherVersion.Major && significantParts >= 1)
+            {
                 if (version.Major > otherVersion.Major)
+                {
                     return 1;
+                }
                 else
+                {
                     return -1;
+                }
+            }
 
             if (version.Minor != otherVersion.Minor && significantParts >= 2)
+            {
                 if (version.Minor > otherVersion.Minor)
+                {
                     return 1;
+                }
                 else
+                {
                     return -1;
+                }
+            }
 
             if (version.Build != otherVersion.Build && significantParts >= 3)
+            {
                 if (version.Build > otherVersion.Build)
+                {
                     return 1;
+                }
                 else
+                {
                     return -1;
+                }
+            }
 
             if (version.Revision != otherVersion.Revision && significantParts >= 4)
+            {
                 if (version.Revision > otherVersion.Revision)
+                {
                     return 1;
+                }
                 else
+                {
                     return -1;
+                }
+            }
 
             return 0;
         }
@@ -73,7 +90,7 @@ namespace drz.Infrastructure.Utility.Extensions
         {
             using (XmlNodeReader nodeReader = new XmlNodeReader(xmlDocument))
             {
-                nodeReader.MoveToContent();
+                _ = nodeReader.MoveToContent();
                 return XDocument.Load(nodeReader);
             }
         }

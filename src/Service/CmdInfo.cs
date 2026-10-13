@@ -15,7 +15,7 @@ using Autodesk.AutoCAD.Runtime;
 
 #endif
 
-namespace drz.Infrastructure.CAD.Service
+namespace dRz.Infrastructure.CAD.Service
 {
     /// <summary>
     /// Информация о командах CAD
@@ -124,11 +124,13 @@ namespace drz.Infrastructure.CAD.Service
                 {
                     CmdList cinf = GetCmdInf(method);
                     if (cinf == null)
+                    {
                         continue;
+                    }
 
                     if (!mapInfo.ContainsKey(cinf.MethodAttr))
                     {
-                        var lCinfo = new List<CmdList>();
+                        List<CmdList> lCinfo = new List<CmdList>();
                         mapInfo.Add(cinf.MethodAttr, lCinfo);
                     }
                     mapInfo[cinf.MethodAttr].Add(cinf);
@@ -140,7 +142,10 @@ namespace drz.Infrastructure.CAD.Service
             {
                 if (keyValuePair.Value.Count > 1)
                 {
-                    if (!string.IsNullOrEmpty(sDuplInfo)) sDuplInfo += "\n";//если дописываем, то перенос
+                    if (!string.IsNullOrEmpty(sDuplInfo))
+                    {
+                        sDuplInfo += "\n";//если дописываем, то перенос
+                    }
 
                     sDuplInfo += "Дублированный атрибут: " + keyValuePair.Key;
 
@@ -160,7 +165,10 @@ namespace drz.Infrastructure.CAD.Service
                         sMethod = "";
                     }
 
-                    if (!string.IsNullOrEmpty(sCmdInfo)) sCmdInfo += "\n";//если дописываем, то перенос
+                    if (!string.IsNullOrEmpty(sCmdInfo))
+                    {
+                        sCmdInfo += "\n";//если дописываем, то перенос
+                    }
 
                     sCmdInfo += keyValuePair.Key + sMethod + "\t" + keyValuePair.Value[0].DescriptionAttr;
                 }

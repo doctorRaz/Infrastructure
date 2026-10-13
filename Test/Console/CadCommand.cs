@@ -3,17 +3,12 @@ using System.ComponentModel;
 using System.Reflection;
 
 using drz.Infrastructure.CAD.MessageService;
-using drz.Infrastructure;
-using drz.Infrastructure.CAD.Service;
+using dRz.Infrastructure.CAD.Service;
+
 
 
 #if NC
-using App = HostMgd.ApplicationServices;
-using Cad = HostMgd.ApplicationServices.Application;
-using Db = Teigha.DatabaseServices;
-using Ed = HostMgd.EditorInput;
 using Rtm = Teigha.Runtime;
-using Gem = Teigha.Geometry;
 
 #elif AC
 using Autodesk.AutoCAD.Windows;

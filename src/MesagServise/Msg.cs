@@ -1,5 +1,4 @@
-﻿using System.Reflection;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 #if NC
 
@@ -13,10 +12,6 @@ using Autodesk.AutoCAD.ApplicationServices;
 using Application = Autodesk.AutoCAD.ApplicationServices.Application;
 using Autodesk.AutoCAD.EditorInput;
 
-#endif
-
-#if NET
-[assembly: AssemblyInformationalVersion("MesagServise for CAD")]
 #endif
 
 namespace drz.Infrastructure.CAD.MessageService

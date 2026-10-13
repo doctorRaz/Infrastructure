@@ -33,14 +33,9 @@ EULA:
 ==============================================================================================================*/
 
 using System;
-using System.Reflection;
 using System.Runtime.InteropServices;
 
-#if NET
-[assembly: AssemblyInformationalVersion("ClsINI for All")]
-#endif
-
-namespace drz.Infrastructure.Utility
+namespace dRz.Infrastructure.Utility
 {
     /// <summary>
     /// Чтение и запись в файлы ИНИ
@@ -69,7 +64,7 @@ namespace drz.Infrastructure.Utility
         /// <summary> INI filename (если путь не указан, функция будет искать файл в каталоге Windows)</summary>
         public string IniFile
         {
-            get => (ls_IniFilename);
+            get => ls_IniFilename;
             set => ls_IniFilename = value;
         }
 
@@ -92,7 +87,7 @@ namespace drz.Infrastructure.Utility
         /// <returns>Значение string</returns>
         public string ReadValue(string pSection, string pKey, string pDefault)
         {
-            return (z_GetString(pSection, pKey, pDefault));
+            return z_GetString(pSection, pKey, pDefault);
         }
 
         //  razygraevaa on 24.10.2022 at 13:19
@@ -162,7 +157,7 @@ namespace drz.Infrastructure.Utility
 
         public string ReadValue(string pSection, string pKey)
         {
-            return (z_GetString(pSection, pKey, ""));
+            return z_GetString(pSection, pKey, "");
         }
 
         /// <summary>Запись значения в INI File</summary>
@@ -171,7 +166,7 @@ namespace drz.Infrastructure.Utility
         /// <param name="pValue">Значение</param>
         public void WriteValue(string pSection, string pKey, string pValue)
         {
-            WritePrivateProfileString(pSection, pKey, pValue, this.ls_IniFilename);
+            _ = WritePrivateProfileString(pSection, pKey, pValue, this.ls_IniFilename);
         }
 
         /// <summary>Удаляет значение из INI File</summary>
@@ -179,7 +174,7 @@ namespace drz.Infrastructure.Utility
         /// <param name="pKey">Ключ</param>
         public void RemoveValue(string pSection, string pKey)
         {
-            WritePrivateProfileString(pSection, pKey, null, this.ls_IniFilename);
+            _ = WritePrivateProfileString(pSection, pKey, null, this.ls_IniFilename);
         }
 
         //   razygraevaa on 16.09.2022 at 12:01
@@ -208,7 +203,7 @@ namespace drz.Infrastructure.Utility
         public void ReadValues(string pSection, ref Array pValues)
         {
             //think  написать метод ReadValues
-            
+
             throw new NotImplementedException("Делается");
             //upd написать метод ReadValues
             //получить все ключи из ReadKeys
@@ -237,7 +232,7 @@ namespace drz.Infrastructure.Utility
         /// <param name="pSection">Раздел</param>
         public void RemoveSection(string pSection)
         {
-            WritePrivateProfileString(pSection, null, null, this.ls_IniFilename);
+            _ = WritePrivateProfileString(pSection, null, null, this.ls_IniFilename);
         }
 
         /// <summary> Вызов API GetPrivateProfileString / GetPrivateProfileStruct </summary>
@@ -247,11 +242,10 @@ namespace drz.Infrastructure.Utility
         /// <returns></returns>
         private string z_GetString(string pSection, string pKey, string pDefault)
         {
-            string sRet = pDefault;
             byte[] bRet = new byte[li_BufferLen];
             int i = GetPrivateProfileString(pSection, pKey, pDefault, bRet, li_BufferLen, ls_IniFilename);
-            sRet = System.Text.Encoding.GetEncoding(1251).GetString(bRet, 0, i).TrimEnd((char)0);
-            return (sRet);
+            string sRet = System.Text.Encoding.GetEncoding(1251).GetString(bRet, 0, i).TrimEnd((char)0);
+            return sRet;
         }
     }
 }
